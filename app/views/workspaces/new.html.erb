@@ -1,2 +1,32 @@
-<h1>Workspaces#new</h1>
-<p>Find me in app/views/workspaces/new.html.erb</p>
+<div class="container  my-5">
+  <div class="col-6">
+    <h2>Add a hopdesk space</h2>
+    <p>Invite people to work in your empty spaces and earn some extra income!</p>
+    <%= simple_form_for @workspace do |f| %>
+      <%= f.input :name %>
+      <%= f.input :postcode %>
+      <%= f.input :capacity %>
+      <p>Amenities:</p>
+      <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="WiFi">
+          <label class="form-check-label" for="inlineCheckbox1">WiFi</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Charging points">
+          <label class="form-check-label" for="inlineCheckbox2">Charging Points</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Quiet space">
+          <label class="form-check-label" for="inlineCheckbox3">Quiet space</label>
+        </div>
+<!--       <%#= f.select :amenities, ['wifi', 'plugs', 'coffee'], :prompt => 'Select One'%> -->
+      <%= f.input :photos, as: :file, input_html: { multiple: true }%>
+      </br>
+      <%= f.button :submit, class: "btn btn-success" %>
+    <% end %>
+
+</br>
+
+  <%= link_to 'Back', workspaces_path, class: "btn btn-outline-success"%>
+  </div>
+</div>
