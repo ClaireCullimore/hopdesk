@@ -1,2 +1,27 @@
-<h1>Bookings#edit</h1>
-<p>Find me in app/views/bookings/edit.html.erb</p>
+<div class="container">
+  <h2>My Bookings - edit</h2>
+  <h3><%= @booking.workspace.name %></h3>
+  <h3><%= @booking.workspace.postcode %></h3>
+  <h3><%= @booking.person_count %></h3>
+  <h3><%= @booking.start_time %></h3>
+  <h3><%= @booking.end_time %></h3>
+
+  <div class="container">
+    <h2>Edit your Booking</h2>
+    <h3><%= @booking.workspace.name %></h3>
+    <h3><%= @booking.workspace.postcode %></h3>
+    <%= simple_form_for [@workspace, @booking] do |f| %>
+      <%= f.input :person_count %>
+      <%= f.input :start_time %>
+      <%= f.input :end_time %>
+      <%= f.submit class: "btn btn-primary"%>
+  </div>
+  <% end %>
+  </br>
+    <%= link_to 'Back',  edit_workspace_booking_path %>
+    <%=link_to workspace_path, method: :delete, data: { confirm: "Are you sure you want to cancel this booking?" } do %>
+        <i class="far fa-trash-alt"></i> </p>
+      <% end %>
+  </br>
+    <%= link_to 'Homepage', workspaces_path, class: "btn btn-primary" %>
+</div>
