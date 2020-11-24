@@ -1,2 +1,15 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="container">
+  <h2>Bookings#new</h2>
+  <div class="container">
+    <h1>Book Now</h1>
+    <%= simple_form_for [@workspace, @booking] do |f| %>
+      <%= f.input :person_count %>
+      <%= f.input :start_time %>
+      <%= f.input :end_time %>
+      </br>
+      <%= f.button :submit, class: "btn btn-success" %>
+    <% end %>
+  </br>
+    <%= link_to 'Back', @workspaces_path %>
+  </div>
+</div>

@@ -26,6 +26,7 @@ class WorkspacesController < ApplicationController
   end
 
   def update
+    raise
     @workspace = Workspace.find(params[:id])
     if @workspace.update(strong_params)
       redirect_to workspace_path(@workspace)
