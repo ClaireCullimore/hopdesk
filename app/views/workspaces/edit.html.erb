@@ -1,2 +1,19 @@
-<h1>Workspaces#edit</h1>
-<p>Find me in app/views/workspaces/edit.html.erb</p>
+<div class="container  my-5">
+  <div class="col-6">
+    <h2>Edit your hopdesk space</h2>
+    <p>Update the details of your space!</p>
+    <%= simple_form_for @workspace do |f| %>
+      <%= f.input :name %>
+      <%= f.input :postcode %>
+      <%= f.input :capacity %>
+      <%= f.input :amenities, collection: ['WiFi', 'Plugs', 'Coffee'], as: :check_boxes, wrapper: :vertical_collection_inline %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }%>
+      </br>
+      <%= f.button :submit, class: "btn btn-success" %>
+    <% end %>
+
+</br>
+
+  <%= link_to 'Back', workspaces_path, class: "btn btn-outline-success"%>
+  </div>
+</div>

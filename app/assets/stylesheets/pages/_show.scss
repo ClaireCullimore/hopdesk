@@ -1,0 +1,23 @@
+#img-large {
+  padding: 30px;
+  width: 856px;
+  height: 352px;
+  object-fit: cover;
+}
+
+.images {
+  display: flex;
+}
+
+.small-images {
+  display: flex;
+  justify-content: space-around;
+}
+
+#img-small {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 198px;
+  height: 176px;
+  object-fit: cover;
+}
