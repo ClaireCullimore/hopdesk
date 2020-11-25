@@ -24,8 +24,10 @@
       <p>£<%= @workspace.prices %> an hour</p>
       <h3>Amenities</h3>
       <p><%= @workspace.amenities %></p>
+       <p><%= @workspace.reviews %></p>
         <div class= "backbutton">
           <%= link_to 'Back', workspaces_path(@workspaces), class: "btn btn-outline-success"%>
+          <%= link_to 'Leave a review', new_workspace_review_path(@workspace) %>
         </div>
     </div>
   </div>
