@@ -1,4 +1,6 @@
+<div class="container">
 <%= simple_form_for [ @workspace, @review ] do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <%= f.input :content, label: "Review this space:", placeholder: "Write your review", class:"label-review" %>
+  <%= f.submit "Submit review", class: "btn btn-outline-success" %>
 <% end %>
+</div>

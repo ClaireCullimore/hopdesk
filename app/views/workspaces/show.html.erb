@@ -17,30 +17,50 @@
 
 <div class="second-container">
   <div class= "leftside">
+    <ul class="list-inline tabs-underlined">
+  <li>
+    <a href="#" class="tab-underlined active">Overview</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Price</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Amenities</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Reviews</a>
+  </li>
+
+</ul>
     <div class= "workspace-info">
       <h3>Overview</h3>
       <p> <%= @workspace.description  %></p>
       <h3>Price</h3>
       <p>£<%= @workspace.prices %> an hour</p>
       <h3>Amenities</h3>
-      <p><%= @workspace.amenities %></p>
-       <p><%= @workspace.reviews %></p>
+      <p> <%= @workspace.amenities %> </p>
+      <ul class="list-group">
+        <% @workspace.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.content %></li>
+        <% end %>
+      </ul>
         <div class= "backbutton">
+          <%= link_to 'Leave a review', new_workspace_review_path(@workspace), class: "btn btn-outline-success"%>
+          <%= link_to 'Edit', edit_workspace_path(@workspace), class: "btn btn-outline-success"%>
           <%= link_to 'Back', workspaces_path(@workspaces), class: "btn btn-outline-success"%>
-          <%= link_to 'Leave a review', new_workspace_review_path(@workspace) %>
         </div>
     </div>
   </div>
 
   <div class= "rightside">
-    <div class= "bookingform">
+    <div class= "bookingform p-3">
       <h3>Book Now</h3>
           <%= simple_form_for [@workspace, Booking.new] do |f| %>
           <%= f.input :person_count %>
-          <%= f.input :start_time %>
-          <%= f.input :end_time %>
+          <%= f.input :start_time, as: :string %>
+          <%= f.input :end_time, as: :string %>
           </br>
-          <%= f.button :submit, class: "btn btn-success" %>
+          <%= f.button :submit, class: "btn btn-success", id:"book-now" %>
         <% end %>
     </div>
   </div>

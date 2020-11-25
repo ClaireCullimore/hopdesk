@@ -1,6 +1,12 @@
 .container h2 {
-  margin-top: 20px;
   margin-left: 30px;
+  font-weight: bold;
+  color: rgb(14,1,1);
+}
+
+.workspace-info h3 {
+  font-size: 16px;
+  font-weight: bolder;
 }
 
 #img-large {
@@ -44,7 +50,13 @@
 .workspace-info {
   font-size: 14px;
   color: grey;
+  padding-top: 20px;
   padding-right: 20px;
+}
+
+.list-group .list-group-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .rightside {
@@ -62,7 +74,13 @@
   border-radius: 5%;
   background-color: white;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
   align-items: center;
   justify-content: center;
+  font-size: 12px;
+}
+
+.input {
+  padding: 30px;
+  color: ¢my-blue;
 }
