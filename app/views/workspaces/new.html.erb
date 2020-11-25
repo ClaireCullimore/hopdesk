@@ -6,20 +6,9 @@
       <%= f.input :name %>
       <%= f.input :postcode %>
       <%= f.input :capacity %>
-      <p>Amenities:</p>
-      <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="WiFi">
-          <label class="form-check-label" for="inlineCheckbox1">WiFi</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Charging points">
-          <label class="form-check-label" for="inlineCheckbox2">Charging Points</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Quiet space">
-          <label class="form-check-label" for="inlineCheckbox3">Quiet space</label>
-        </div>
-<!--       <%#= f.select :amenities, ['wifi', 'plugs', 'coffee'], :prompt => 'Select One'%> -->
+      <%= f.input :prices %>
+      <%= f.input :description %>
+      <%= f.input :amenities, collection: ['WiFi', 'Plugs', 'Coffee'], as: :check_boxes, wrapper: :vertical_collection_inline %>
       <%= f.input :photos, as: :file, input_html: { multiple: true }%>
       </br>
       <%= f.button :submit, class: "btn btn-success" %>

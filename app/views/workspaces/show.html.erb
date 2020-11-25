@@ -6,26 +6,41 @@
        </br>
     </div>
     <div class="small-images">
-      <div>
+      <div class="top-image">
         <img id="img-small" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
       </div>
-      <div>
+      <div class="bottom-image">
         <img id="img-small" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
       </div>
     </div>
   </div>
 
-<div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<h3>Price</h3>
-<p>£5 an hour</p>
-<p>£25 per day</p>
-<h3>Amenities</h3>
-<p><%= @workspace.amenities %></p>
+<div class="second-container">
+  <div class= "leftside">
+    <div class= "workspace-info">
+      <h3>Overview</h3>
+      <p> <%= @workspace.description  %></p>
+      <h3>Price</h3>
+      <p>£<%= @workspace.prices %> an hour</p>
+      <h3>Amenities</h3>
+      <p><%= @workspace.amenities %></p>
+        <div class= "backbutton">
+          <%= link_to 'Back', workspaces_path(@workspaces), class: "btn btn-outline-success"%>
+        </div>
+    </div>
+  </div>
 
-</div>
-
-<div>
-
+  <div class= "rightside">
+    <div class= "bookingform">
+      <h3>Book Now</h3>
+          <%= simple_form_for [@workspace, Booking.new] do |f| %>
+          <%= f.input :person_count %>
+          <%= f.input :start_time %>
+          <%= f.input :end_time %>
+          </br>
+          <%= f.button :submit, class: "btn btn-success" %>
+        <% end %>
+    </div>
+  </div>
 </div>
 </div>

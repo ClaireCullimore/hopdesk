@@ -26,7 +26,6 @@ class WorkspacesController < ApplicationController
   end
 
   def update
-    raise
     @workspace = Workspace.find(params[:id])
     if @workspace.update(strong_params)
       redirect_to workspace_path(@workspace)
@@ -44,6 +43,6 @@ class WorkspacesController < ApplicationController
   private
 
   def strong_params
-    params.require(:workspace).permit(:name, :postcode, :amenities, :capacity)
+    params.require(:workspace).permit(:name, :postcode, :amenities, :capacity, :prices, :description)
   end
 end
