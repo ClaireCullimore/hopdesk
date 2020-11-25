@@ -1,27 +1,23 @@
-<div class="container-hop-desk">
-  <div class="row">
-  <div class="col-3 left-index">
-   <div class="filter mb-2">
-<!--  -->
-  <!-- <p> Filter the features</p>
-  <p> Type of work space</p>
-  <p>Capacity</p>
-</div>
-</div>
-
-
-<div class="card-workspaces">
-<img src="..." alt="office space">
-</div> -->
-
-
-  <!-- <div id="map"
-    style="width: 100%; height: 100%;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="col-7">
+  <div class="cards">
+    <% @workspaces.each do |workspace| %>
+    <%= link_to workspace_path(workspace) do %>
+    <div class="card-art">
+      <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+      <div>
+        <p> <%= workspace.name %></p>
       </div>
+      <h2>£<%= workspace.postcode %></h2>
     </div>
   </div>
+   <% end %>
+   <% end %>
+</div>
 
- -->
+
+
+
+
+
+
 
