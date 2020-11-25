@@ -1,23 +1,43 @@
-<div class="col-7">
-  <div class="cards">
-    <% @workspaces.each do |workspace| %>
-    <%= link_to workspace_path(workspace) do %>
-    <div class="card-art">
-      <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
-      <div>
+<div class="card-container">
+  <div class="leftside">
+    <div class="cards">
+      <% @workspaces.each do |workspace| %>
+      <% if workspace.id.even?  %>
+      <%= link_to workspace_path(workspace) do %>
+      <img class="img" src="https://picsum.photos/id/1/250/300" alt="placeholder">
         <p> <%= workspace.name %></p>
+        <h2> <%= workspace.postcode %></h2>
+      <div class="icon">
+        <ul>
+           <li>WiFi<img src="https://img.icons8.com/metro/25/000000/wifi.png"/></li>
+           <li>Telephone<img src="https://img.icons8.com/emoji/25/000000/telephone-receiver.png"/></li>
+           <li>Plugin<img src="https://img.icons8.com/android/25/000000/plugin.png"/></li>
+        </ul>
       </div>
-      <h2> <%= workspace.postcode %></h2>
+        <% end %>
+        <% end %>
+        <% end %>
     </div>
   </div>
-   <% end %>
-   <% end %>
+
+ <div class="rightside">
+  <div class="cards">
+      <% @workspaces.each do |workspace| %>
+      <% if workspace.id.odd?  %>
+      <%= link_to workspace_path(workspace) do %>
+      <img class="img" src="https://picsum.photos/id/1/250/300" alt="placeholder">
+        <p> <%= workspace.name %></p>
+        <h2> <%= workspace.postcode %></h2>
+      <div class="icon">
+        <ul>
+           <li>WiFi<img src="https://img.icons8.com/metro/25/000000/wifi.png"/></li>
+           <li>Telephone<img src="https://img.icons8.com/emoji/25/000000/telephone-receiver.png"/></li>
+           <li>Plugin<img src="https://img.icons8.com/android/25/000000/plugin.png"/></li>
+        </ul>
+      </div>
+        <% end %>
+        <% end %>
+        <% end %>
+    </div>
+ </div>
 </div>
-
-
-
-
-
-
-
-
