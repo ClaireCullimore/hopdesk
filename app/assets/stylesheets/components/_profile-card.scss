@@ -1,0 +1,25 @@
+.booking-card {
+  overflow: hidden;
+  background-color: $my-white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  margin: 16px;
+  height: 400px;
+  width: 400px;
+  border-radius: 5px;
+}
+
+.booking-card h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  padding-right: 16px;
+  padding-top: 16px;
+}
+
+.booking-card p {
+  font-size: 20px;
+  opacity: .7;
+  margin: 0;
+  padding-left: 16px;
+  padding-top: 8px;
+}
