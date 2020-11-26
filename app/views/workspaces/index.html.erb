@@ -4,7 +4,11 @@
       <% @workspaces.each do |workspace| %>
       <% if workspace.id.even?  %>
       <%= link_to workspace_path(workspace) do %>
-      <img class="img" src="https://picsum.photos/id/1/250/300" alt="placeholder">
+      <% if workspace.photos.attached? %>
+        <%= cl_image_tag workspace.photos.first.key, class: "img" %>
+        <% else %>
+          <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+        <% end %>
         <p> <%= workspace.name %></p>
         <h2> <%= workspace.postcode %></h2>
       <div class="icon">
@@ -20,13 +24,17 @@
     </div>
   </div>
 
+
  <div class="rightside">
   <div class="cards">
       <% @workspaces.each do |workspace| %>
       <% if workspace.id.odd?  %>
       <%= link_to workspace_path(workspace) do %>
-      <img class="img" src="https://picsum.photos/id/1/250/300" alt="placeholder">
-        <p> <%= workspace.name %></p>
+<% if workspace.photos.attached? %>
+        <%= cl_image_tag workspace.photos.first.key, class: "img" %>
+        <% else %>
+          <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+        <% end %>        <p> <%= workspace.name %></p>
         <h2> <%= workspace.postcode %></h2>
       <div class="icon">
         <ul>

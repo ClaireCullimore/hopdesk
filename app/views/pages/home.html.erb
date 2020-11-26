@@ -1,13 +1,27 @@
-<div class= "background-image">
-  <div class= "home-text">
-    <h2>Find your Local Workspace</h2>
-      <div class="index-form form-inline justify-content-center m-3">
-        <%= form_tag workspaces_path, :method => "get" do %>
-        <%= text_field_tag :search_city, params[:search_city], class: "form-control rounded-left", placeholder: "South East London" %>
-        <%= text_field_tag :search_distance, params[:search_distance], class: "form-control", placeholder: "Within 5 km" %>
-        <%= submit_tag "Search", class: "search-button"  %>
-    <% end %>
+<div class="home-banner">
+  <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-pause="false" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1601933470198-75ebdfa8e740?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1534430071631-854ff55eec78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=714&q=80" alt="Second slide">
+      </div>
+    </div>
+  </div>
+  <div class="home-text-container">
+    <div class= "home-text">
+      <h2>Find your Local Workspace</h2>
+        <div class="index-form form-inline justify-content-center m-3">
+          <%= form_tag workspaces_path, :method => "get" do %>
+          <%= text_field_tag :search_city, params[:search_city], class: "form-control rounded-left", placeholder: "South East London" %>
+          <%= text_field_tag :search_distance, params[:search_distance], class: "form-control", placeholder: "Within 5 km" %>
+          <%= submit_tag "Search", class: "search-button"  %>
+      <% end %>
+  </div>
 </div>
+
+
 
   </div>
 </div>
