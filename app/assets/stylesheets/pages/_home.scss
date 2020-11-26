@@ -12,11 +12,31 @@ h3 {
   object-fit: cover;
 }
 
+.home-text > h2 {
+  font-size: 60px;
+  color: white;
+  text-shadow: 1px 1px 1px #538885;
+  padding-top: 150px;
+}
+
 .icons {
-  display: flex;
-  font-size: 40px;
-  justify-content: space-evenly;
   color: #538885;
+  text-align: center;
+}
+
+.icons h4 {
+  font-size: 15px;
+margin-top: 5px;
+}
+
+.icons img {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.icons-three {
+  display:flex;
 }
 
 .home-text {
