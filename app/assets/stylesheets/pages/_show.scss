@@ -24,13 +24,14 @@
 }
 
 .small-images {
+  padding-top: 30px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
+  height: 415px;
 }
 
 #img-small {
-  padding: 10px;
   margin-bottom: 10px;
   width: 198px;
   height: 176px;
@@ -39,7 +40,7 @@
 
 .second-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 30px;
   width: px;
 }
