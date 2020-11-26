@@ -8,8 +8,8 @@
       <%= f.input :capacity %>
       <%= f.input :prices %>
       <%= f.input :description %>
-      <%= f.input :amenities, collection: ['WiFi', 'Plugs', 'Coffee'], as: :check_boxes, wrapper: :vertical_collection_inline %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.association :amenities, collection: Amenity.all, as: :check_boxes, wrapper: :vertical_collection_inline %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }%>
       </br>
       <%= f.button :submit, class: "btn btn-success" %>
     <% end %>

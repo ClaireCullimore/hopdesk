@@ -1,0 +1,19 @@
+.workspaces {
+  display: flex;
+  width: 100%;
+  margin: 20px;
+}
+
+.workspaces-leftside {
+  width: 50%;
+}
+
+.workspaces-rightside {
+  width: 50%;
+  background-color: lightblue;
+}
+
+.workspaces-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
