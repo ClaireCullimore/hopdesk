@@ -48,10 +48,15 @@
 }
 
 .workspace-info {
-  font-size: 14px;
+  font-size: 16px;
   color: grey;
   padding-top: 20px;
   padding-right: 20px;
+}
+
+.workspace-info p {
+  font-size: 16px;
+  padding-top: 10px;
 }
 
 .list-group .list-group-item {
