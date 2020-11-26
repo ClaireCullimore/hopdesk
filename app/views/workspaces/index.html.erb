@@ -1,43 +1,26 @@
-<div class="card-container">
-  <div class="leftside">
-    <div class="cards">
+
+<div class="workspaces">
+  <div class="workspaces-leftside">
+    <div class="workspaces-cards">
       <% @workspaces.each do |workspace| %>
-      <% if workspace.id.even?  %>
       <%= link_to workspace_path(workspace) do %>
-      <img class="img" src="https://picsum.photos/id/1/250/300" alt="placeholder">
-        <p> <%= workspace.name %></p>
-        <h2> <%= workspace.postcode %></h2>
-      <div class="icon">
-        <ul>
-           <li>WiFi<img src="https://img.icons8.com/metro/25/000000/wifi.png"/></li>
-           <li>Telephone<img src="https://img.icons8.com/emoji/25/000000/telephone-receiver.png"/></li>
-           <li>Plugin<img src="https://img.icons8.com/android/25/000000/plugin.png"/></li>
-        </ul>
+      <div class="workspace-card">
+        <img class="workspace-card-image" src="assets/workspace5.jpg" alt="placeholder">
+        <h2 class="workspace-card-name"> <%= workspace.name %></h2>
+      <div class="workspace-card__icons">
+           <div><img src="https://img.icons8.com/metro/25/000000/wifi-logo--v1.png"/></div>
+           <div><img src="https://img.icons8.com/plasticine/25/000000/phone-not-being-used.png"/></div>
+           <div><img src="https://img.icons8.com/fluent-systems-filled/25/000000/plugin.png"/></div>
       </div>
-        <% end %>
+      <p> <%= workspace.postcode %></p>
+    </div>
         <% end %>
         <% end %>
     </div>
   </div>
 
- <div class="rightside">
-  <div class="cards">
-      <% @workspaces.each do |workspace| %>
-      <% if workspace.id.odd?  %>
-      <%= link_to workspace_path(workspace) do %>
-      <img class="img" src="https://picsum.photos/id/1/250/300" alt="placeholder">
-        <p> <%= workspace.name %></p>
-        <h2> <%= workspace.postcode %></h2>
-      <div class="icon">
-        <ul>
-           <li>WiFi<img src="https://img.icons8.com/metro/25/000000/wifi.png"/></li>
-           <li>Telephone<img src="https://img.icons8.com/emoji/25/000000/telephone-receiver.png"/></li>
-           <li>Plugin<img src="https://img.icons8.com/android/25/000000/plugin.png"/></li>
-        </ul>
-      </div>
-        <% end %>
-        <% end %>
-        <% end %>
-    </div>
+ <div class="workspaces-rightside">
+   map
  </div>
 </div>
+
