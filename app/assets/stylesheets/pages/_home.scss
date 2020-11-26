@@ -84,6 +84,24 @@ margin-top: 5px;
   border-radius: 3px;
 }
 
+.carousel-container {
+  background-color: #DEF4FD;
+}
+.carousel-images {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+
+  img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+  }
+}
+
 .small-image {
   height: 400px;
   width: 400px;
