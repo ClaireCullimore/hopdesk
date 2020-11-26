@@ -1,16 +1,23 @@
 <div class="container">
   <h2><%=@workspace.name%></h2>
-  <div class=images>
-    <div>
-      <img id="img-large" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
-       </br>
+  <div class="top-container">
+    <div class="top-leftside">
+      <% if @workspace.photos.attached? %>
+      <%= cl_image_tag @workspace.photos.first.key, height: 500, width: 400, crop: :fill %>
+      <% else %>
+        <img id="img-large" class="img-zoom-container" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
+      <% end %>
     </div>
-    <div class="small-images">
-      <div class="top-image">
-        <img id="img-small" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
-      </div>
-      <div class="bottom-image">
-        <img id="img-small" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
+    <div class="top-rightside">
+      <div class="small-images">
+        <% if @workspace.photos.attached? %>
+          <% @workspace.photos.last(3).each do |photo| %>
+          <%= cl_image_tag photo.key, height: 100, width: 100, crop: :fill %>
+          <% end %>
+        <% else %>
+          <img class="top-image" id="img-small" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
+          <img class="bottom-image" id="img-small" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
+        <% end %>
       </div>
     </div>
   </div>

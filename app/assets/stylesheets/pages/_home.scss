@@ -5,11 +5,25 @@
 
 }
 
-.background-image {
-  background-image: url("https://images.unsplash.com/photo-1485182708500-e8f1f318ba72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1685&q=80");
-  height: 600px;
+.home-banner {
   position: relative;
-  object-fit: cover;
+  height: 600px;
+  overflow: hidden;
+
+  img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.home-text-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 
 .home-text > h2 {

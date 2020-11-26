@@ -5,7 +5,11 @@
       <% @workspaces.each do |workspace| %>
       <%= link_to workspace_path(workspace) do %>
       <div class="workspace-card">
-        <img class="workspace-card-image" src="assets/workspace5.jpg" alt="placeholder">
+        <% if workspace.photos.attached? %>
+          <%= cl_image_tag workspace.photos.first.key, class: "img" %>
+        <% else %>
+          <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+        <% end %>
         <h2 class="workspace-card-name"> <%= workspace.name %></h2>
       <div class="workspace-card__icons">
            <div><img src="https://img.icons8.com/metro/25/000000/wifi-logo--v1.png"/></div>
