@@ -1,27 +1,30 @@
-<div class="container-hop-desk">
-  <div class="row">
-  <div class="col-3 left-index">
-   <div class="filter mb-2">
-<!--  -->
-  <!-- <p> Filter the features</p>
-  <p> Type of work space</p>
-  <p>Capacity</p>
-</div>
-</div>
 
-
-<div class="card-workspaces">
-<img src="..." alt="office space">
-</div> -->
-
-
-  <!-- <div id="map"
-    style="width: 100%; height: 100%;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="workspaces">
+  <div class="workspaces-leftside">
+    <div class="workspaces-cards">
+      <% @workspaces.each do |workspace| %>
+      <%= link_to workspace_path(workspace) do %>
+      <div class="workspace-card">
+        <% if workspace.photos.attached? %>
+          <%= cl_image_tag workspace.photos.first.key, class: "img" %>
+        <% else %>
+          <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+        <% end %>
+        <h2 class="workspace-card-name"> <%= workspace.name %></h2>
+      <div class="workspace-card__icons">
+           <div><img src="https://img.icons8.com/metro/25/000000/wifi-logo--v1.png"/></div>
+           <div><img src="https://img.icons8.com/plasticine/25/000000/phone-not-being-used.png"/></div>
+           <div><img src="https://img.icons8.com/fluent-systems-filled/25/000000/plugin.png"/></div>
       </div>
+      <p> <%= workspace.postcode %></p>
+    </div>
+        <% end %>
+        <% end %>
     </div>
   </div>
 
- -->
+ <div class="workspaces-rightside">
+   map
+ </div>
+</div>
 

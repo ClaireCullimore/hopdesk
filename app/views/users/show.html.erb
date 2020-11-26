@@ -1,13 +1,11 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
 <div class="container">
   <h2>My Bookings</h2>
   <% @bookings.each do |booking| %>
-    <%= booking.workspace.name %>
-    <%= booking.workspace.postcode %>
-    <%= booking.person_count %>
-    <%= booking.start_time %>
-    <%= booking.end_time %>
-    <%= link_to 'Edit booking', edit_workspace_booking_path(booking.workspace, booking) %>
-  <% end %>
+      <p><%= booking.workspace.name %>:
+      <%= booking.start_time.strftime('%a %e %B %l:%M')%> -
+      <%= booking.end_time.strftime('%a %e %B %l:%M')%>
+      for <%= booking.person_count %> people
+      <%= link_to 'Edit booking', edit_workspace_booking_path(booking.workspace, booking), class: "btn btn-success btn-sm" %></p>
+      <% end %>
 </div>
+

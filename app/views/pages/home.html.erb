@@ -1,2 +1,104 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-banner">
+  <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-pause="false" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1601933470198-75ebdfa8e740?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1534430071631-854ff55eec78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=714&q=80" alt="Second slide">
+      </div>
+    </div>
+  </div>
+  <div class="home-text-container">
+    <div class= "home-text">
+      <h2>Find your Local Workspace</h2>
+        <div class="index-form form-inline justify-content-center m-3">
+          <%= form_tag workspaces_path, :method => "get" do %>
+          <%= text_field_tag :search_city, params[:search_city], class: "form-control rounded-left", placeholder: "South East London" %>
+          <%= text_field_tag :search_distance, params[:search_distance], class: "form-control", placeholder: "Within 5 km" %>
+          <%= submit_tag "Search", class: "search-button"  %>
+      <% end %>
+  </div>
+</div>
+
+
+
+  </div>
+</div>
+<div class="large-card">
+  <h2>Inspiring flexible working… with a great cup of coffee!</h2>
+  <p>If you are looking for a truly flexible workspace with all the facilities of an office, the convenience of your local high-street and the relaxed vibe of your favourite coffee shop then look no further! Just a stones throw away from your front door, we want to make your working experience as comfortable and easy as possible and with some of the most delicious coffee and tea in London…
+  </p>
+  <div class="icons">
+    <div class="icons-three">
+      <img src="https://img.icons8.com/dotty/80/000000/laptop.png"/>
+      <h4>Open Laptop Space</h4>
+      <img src="https://img.icons8.com/wired/64/000000/wifi-logo.png"/>
+      <h4>Super Speedy Wifi</h4>
+      <img src="https://img.icons8.com/wired/64/000000/plug.png"/>
+      <h4>Many Plug Sockets</h4>
+    </div>
+    <div class="icons-three">
+      <img src="https://img.icons8.com/wired/64/000000/tea.png"/>
+      <h4>Tea and Coffee Available</h4>
+      <img src="https://img.icons8.com/wired/64/000000/light-on.png"/>
+      <h4>Community of Innovative Individuals</h4>
+      <img src="https://img.icons8.com/dotty/80/000000/clean-hands.png"/>
+      <h4>Covid-19 Friendly</h4>
+    </div>
+  </div>
+</div>
+</div>
+<div class="top-content">
+    <div class="container-fluid">
+        <div id="carousel-example" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner row w-100 mx-auto" role="listbox">
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
+                    <img src="https://images.unsplash.com/photo-1601933470198-75ebdfa8e740?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" class="img-fluid mx-auto d-block" alt="img1">
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1630&q=80" class="img-fluid mx-auto d-block" alt="img2">
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="https://images.unsplash.com/photo-1534430071631-854ff55eec78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=714&q=80" class="img-fluid mx-auto d-block" alt="img3">
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="https://images.unsplash.com/photo-1563986768817-257bf91c5753?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1570&q=80" class="img-fluid mx-auto d-block" alt="img4">
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="https://images.unsplash.com/photo-1586996157489-6a0569183f2f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" class="img-fluid mx-auto d-block" alt="img5">
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1496&q=80" class="img-fluid mx-auto d-block" alt="img6">
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="https://unsplash.com/photos/hyhPEsbGoTw" class="img-fluid mx-auto d-block" alt="img7">
+                </div>
+                <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                    <img src="https://unsplash.com/photos/Ti1_yA6gDsY" class="img-fluid mx-auto d-block" alt="img8">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-example" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class= "reviews-image">
+  <h2>What people say about us</h2>
+  <div class ="square-cards">
+    <p>Friendly and helpful onsite team, really easy and flexible to just pay for the days/hours we need each week. Been coming for over a year and had no issues or problems, thank you.</p>
+    <p>Friendly and helpful onsite team, really easy and flexible to just pay for the days/hours we need each week. Been coming for over a year and had no issues or problems, thank you.</p>
+    <p>Friendly and helpful onsite team, really easy and flexible to just pay for the days/hours we need each week. Been coming for over a year and had no issues or problems, thank you.</p>
+<div class="circular-sb">
+    Friendly and helpful onsite team, really easy and flexible to just pay for the days/hours we need each week. Been coming for over a year and had no issues or problems, thank you.
+<div class="circle1"></div>
+<div class="circle2"></div>
+</div>
+  </div>
+</div>

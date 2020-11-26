@@ -1,1 +1,166 @@
-// Specific CSS for your home-page
+.navbar-name h3 {
+  color: #538885;
+  border: 3px solid #538885;
+  padding: 4px;
+
+}
+
+.home-banner {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+
+  img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.home-text-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.home-text > h2 {
+  font-size: 60px;
+  color: white;
+  text-shadow: 1px 1px 1px #538885;
+  padding-top: 150px;
+}
+
+.icons {
+  color: #538885;
+  text-align: center;
+}
+
+.icons h4 {
+  font-size: 15px;
+margin-top: 5px;
+}
+
+.icons img {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.icons-three {
+  display:flex;
+}
+
+.home-text {
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+}
+
+.search-button {
+  color: #538885;
+  border: 3px solid #538885;
+  border-radius: 4%;
+  padding: 4px;
+}
+
+
+.large-card {
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: #E8E8E8;
+  width: 1000px;
+  height: 400px;
+  margin: auto;
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.image-row {
+  display: flex;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.small-image {
+  height: 400px;
+  width: 400px;
+  object-fit: cover;
+  padding: 10px;
+}
+
+.reviews-image {
+  background-image: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+  height: 600px;
+}
+
+.square-cards {
+  display:flex;
+  justify-content:space-evenly;
+}
+
+.square-cards > p {
+  color: #538885;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  background-color: #E8E8E8;
+  border-radius: 7px;
+  padding: 10px;
+  border: 2px solid #538885;
+ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.3);
+}
+
+.circular-sb {
+  width: 300px;
+  height: 300px;
+  border: 5px solid #538885;
+  padding: 80px 0px;
+  margin: 30px auto;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 200;
+  font-family: arial;
+  position: relative;
+  color: #538885;
+  background-color: #E8E8E8;
+  font-family: Montserrat, sans-serif;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.3);
+}
+
+.circle1 {
+  border: 5px solid #538885;
+  position: absolute;
+  width: 25px;
+  padding: 20px;
+  border-radius: 50%;
+  right: -15px;
+  bottom: 23px;
+}
+
+.circle1:before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  padding: 20px;
+  border-radius: 50%;
+  right: 0px;
+  bottom: 0px;
+  background: #fff;
+  background-color: #E8E8E8;
+}
+
+.circle2 {
+  border: 5px solid #538885;
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  right: -60px;
+  bottom: 5px;
+  background-color: #E8E8E8;
+}
