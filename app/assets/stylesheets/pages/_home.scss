@@ -2,6 +2,8 @@
   color: #538885;
   border: 3px solid #538885;
   padding: 4px;
+  margin-left: 30px;
+  margin-bottom: 0px;
 
 }
 
@@ -76,7 +78,25 @@ margin-top: 5px;
   padding: 20px;
   padding-left: 100px;
   padding-right: 100px;
+
+  .icons {
+    padding-top: 30px;
+  }
 }
+
+.large-card h2 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 33px;
+  color: #538885;
+}
+
+.icons-two {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+}
+
 
 .image-row {
   display: flex;

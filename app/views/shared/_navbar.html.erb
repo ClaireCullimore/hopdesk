@@ -1,14 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://images.unsplash.com/photo-1591382386627-349b692688ff?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8cmFiYml0fGVufDB8fDB8&auto=format&fit=crop&w=500&q=60", class: "avatar" %>
-    <% end %>
+  <div class="icon-and-title">
+    <img class="rabbit-icon" src="https://img.icons8.com/ios/50/000000/running-rabbit.png"/>    <div class="navbar-name">
+    <h3>HOP desk</h3>
+  </div>
+</div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="navbar-name">
-    <h3>HOP desk</h3>
-  </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
