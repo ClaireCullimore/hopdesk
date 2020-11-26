@@ -8,6 +8,11 @@
   width: 50%;
 }
 
+// .map {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+
 .workspaces-rightside {
   width: 50%;
   background-color: lightblue;
@@ -17,3 +22,17 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+h2 {
+  color: black;
+  font-family: "roboto", sans-serif;
+  font-size: 30px;
+}
+
+p {
+  color: black;
+  font-family: "montserrat", sans-serif;
+  font-size: 20px;
+}
+
+
