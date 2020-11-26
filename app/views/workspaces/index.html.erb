@@ -8,7 +8,7 @@
         <% if workspace.photos.attached? %>
           <%= cl_image_tag workspace.photos.first.key, class: "img" %>
         <% else %>
-          <img class="img" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
+          <img class="card-image-workspace" src="https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="painting">
         <% end %>
         <h2 class="workspace-card-name"> <%= workspace.name %></h2>
       <div class="workspace-card__icons">
@@ -23,8 +23,8 @@
     </div>
   </div>
 
- <div class="workspaces-rightside">
-   map
+   <div class="workspaces-rightside">
+    map
  </div>
 </div>
 
