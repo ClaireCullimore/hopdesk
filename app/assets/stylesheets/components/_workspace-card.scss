@@ -1,28 +1,67 @@
 .workspace-card {
-  background-color: grey;
-  width: 230px;
   background-color: white;
-  width: 200px;
-  height: fit-content;
-  padding:10px;
+  width: 300px;
+  height: 387px;
   margin: 20px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border-radius: 10px;
+
+p {
+  color: #538885;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
 
   .img {
-    width: 100px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
   }
 
   &:hover {
     transform: scale(1.05);
     transition: 0.2s;
+    box-shadow: 2px 2px 2px 2px rgba(11,156,49,0.2);
+    text-decoration: none;
+}
 
+}
+
+.workspace-link:hover {
+  text-decoration: none;
+}
+  .card-icons {
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 53px;
+
+    img {
+    height: 40px;
+    width: 40px;
   }
 }
 
-  .icons {
-    display: flex;
+.workspace-card-name {
+    color: #538885;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 24px;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.card-image-workspace {
-  width: 300px;
+.product-cards p {
+  padding-left: 31px;
+  font-size: 15px;
 }
+
+.icon-postcode {
+  display: flex;
+  align-items: center;
+  padding-left: 31px;
+  color: #538885;
+
+}
+

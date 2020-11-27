@@ -14,8 +14,8 @@
       <h2>Find your Local Workspace</h2>
         <div class="index-form form-inline justify-content-center m-3">
           <%= form_tag workspaces_path, :method => "get" do %>
-          <%= text_field_tag :search_city, params[:search_city], class: "form-control rounded-left", placeholder: "South East London" %>
-          <%= text_field_tag :search_distance, params[:search_distance], class: "form-control", placeholder: "Within 5 km" %>
+          <%= text_field_tag :search_city, params[:search_city], class: "form-control rounded-left", placeholder: "Postcode" %>
+          <%= text_field_tag :search_distance, params[:search_distance], class: "form-control", placeholder: "km radius" %>
           <%= submit_tag "Search", class: "btn btn-info" %>
       <% end %>
     </div>
@@ -63,68 +63,69 @@
     </div>
   </div>
 </div>
+<div class="background-card">
+  <div class="container carousel-container" >
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carousel-images">
+            <div>
+              <img src="https://images.unsplash.com/photo-1601933470198-75ebdfa8e740?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" class="img-fluid mx-auto d-block" alt="img1">
+            </div>
+            <div>
+              <img src="https://images.unsplash.com/photo-1578231177134-f1bbe379b054?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80" class="img-fluid mx-auto d-block" alt="img1">
+            </div>
+            <div>
+              <img src="https://images.unsplash.com/photo-1531973819741-e27a5ae2cc7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" class="img-fluid mx-auto d-block" alt="img6">
+            </div>
+          </div>
+        </div>
 
-<div class="container carousel-container" >
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="carousel-images">
-          <div>
-            <img src="https://images.unsplash.com/photo-1601933470198-75ebdfa8e740?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" class="img-fluid mx-auto d-block" alt="img1">
+        <div class="carousel-item">
+          <div class="carousel-images">
+            <div>
+              <img src="https://images.unsplash.com/photo-1538333581680-29dd4752ddf2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" class="img-fluid mx-auto d-block" alt="img1">
+            </div>
+            <div>
+              <img src="https://images.unsplash.com/photo-1586033914647-35700b7cf9fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80" class="img-fluid mx-auto d-block" alt="img1">
+            </div>
+            <div>
+              <img src="https://images.unsplash.com/photo-1585534328145-db51ea694856?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80" class="img-fluid mx-auto d-block" alt="img6">
+            </div>
           </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1601933470198-75ebdfa8e740?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" class="img-fluid mx-auto d-block" alt="img1">
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1496&q=80" class="img-fluid mx-auto d-block" alt="img6">
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-images">
+            <div>
+              <img src="https://images.unsplash.com/photo-1531527122496-151cfb74bda5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1334&q=80" class="img-fluid mx-auto d-block" alt="img1">
+            </div>
+            <div>
+              <img src="https://images.unsplash.com/photo-1577140917170-285929fb55b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" class="img-fluid mx-auto d-block" alt="img1">
+            </div>
+            <div>
+              <img src="https://images.unsplash.com/photo-1531419925964-8c2e4bc58e63?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="img-fluid mx-auto d-block" alt="img6">
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="carousel-item">
-        <div class="carousel-images">
-          <div>
-            <img src="https://images.unsplash.com/photo-1601933470198-75ebdfa8e740?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" class="img-fluid mx-auto d-block" alt="img1">
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1601933470198-75ebdfa8e740?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" class="img-fluid mx-auto d-block" alt="img1">
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1496&q=80" class="img-fluid mx-auto d-block" alt="img6">
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="carousel-images">
-          <div>
-            <img src="https://images.unsplash.com/photo-1601933470198-75ebdfa8e740?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" class="img-fluid mx-auto d-block" alt="img1">
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1601933470198-75ebdfa8e740?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" class="img-fluid mx-auto d-block" alt="img1">
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1496&q=80" class="img-fluid mx-auto d-block" alt="img6">
-          </div>
-        </div>
-      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
   </div>
 </div>
 
 <div class= "reviews-image">
-  <h2>What people say about us</h2>
+  <h2>What people say</h2>
   <div class="speech-bubble">
     <div class="circular-sb">
-      <p>Friendly and helpful onsite team. </p>
+      <p>Friendly and helpful onsite team. The wifi was super speedy.</p>
       <div class="circle1"></div>
         <div class="circle2"></div>
     </div>
