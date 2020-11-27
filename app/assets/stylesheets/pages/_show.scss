@@ -24,24 +24,42 @@
 }
 
 .small-images {
+  padding-top: 30px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
+  height: 415px;
 }
 
 #img-small {
-  padding: 10px;
   margin-bottom: 10px;
   width: 198px;
   height: 176px;
   object-fit: cover;
 }
 
+.tab-content {
+  height: 300px;
+  overflow: scroll;
+  width: 100%;
+}
+
+.tab-content p {
+  color: rgba(46, 49, 49, 1);
+}
+.tab-background {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.list-group .list-group-item {
+  color: rgba(46, 49, 49, 1);
+}
+
 .second-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 30px;
-  width: px;
 }
 
 .leftside {

@@ -1,11 +1,49 @@
 <div class="container">
-  <h2>My Bookings</h2>
+  <div class="heading">
+    My Bookings
+  </div>
   <% @bookings.each do |booking| %>
-      <p><%= booking.workspace.name %>:
-      <%= booking.start_time.strftime('%a %e %B %l:%M')%> -
-      <%= booking.end_time.strftime('%a %e %B %l:%M')%>
-      for <%= booking.person_count %> people
-      <%= link_to 'Edit booking', edit_workspace_booking_path(booking.workspace, booking), class: "btn btn-success btn-sm" %></p>
-      <% end %>
+    <div class="bookings">
+      <div class="qr">
+        <%= @svg.html_safe %>
+      </div>
+      <div class="my-booking">
+       <h3><%= booking.workspace.name %>:</h3>
+       <p><%= booking.start_time.strftime('%a %e %B %l:%M')%> -
+        <%= booking.end_time.strftime('%a %e %B %l:%M')%>
+        for <%= booking.person_count %> people</p>
+       <p><%= link_to "Get in touch", 'https://wa.me/447929641799', target: "_blank" %></p>
+      </div>
+      <%= link_to 'Edit booking', edit_workspace_booking_path(booking.workspace, booking), class: "btn btn-success btn-sm booking-edit-link" %>
+    </div>
+  <% end %>
 </div>
+<style>
 
+  .bookings {
+    background: #FFF;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    width: 100%;
+    height: 250px;
+    border: solid 1px #E1E4E8;
+  }
+
+  .bookings a {
+    text-decoration: none;
+  }
+
+  .booking-edit-link {
+    margin-right: 12px;
+  }
+
+  .heading {
+    margin: 24px;
+    font-size: 64px !important;
+    font-weight: bolder;
+  }
+
+  .qr {
+    margin: auto;
+  }
+</style>

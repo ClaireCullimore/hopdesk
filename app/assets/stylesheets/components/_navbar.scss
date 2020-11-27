@@ -1,6 +1,17 @@
+.navbar-name h3 {
+  color: #538885;
+  border: 3px solid #538885;
+  padding: 4px;
+  margin-left: 30px;
+  margin-bottom: 0px;
+
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +20,21 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.rabbit-icon {
+  height: 40px;
+  width: 40px;
+  color: #538885;
+  margin-top: 4px;
+}
+
+.icon-and-title {
+  display:flex;
+  margin: 0px;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: #538885;
+
 }

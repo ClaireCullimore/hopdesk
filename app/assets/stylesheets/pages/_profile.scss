@@ -1,0 +1,36 @@
+.heading h2 {
+  padding-top: 10px;
+  font-size: 30px;
+  color: rgba(46, 49, 49, 1);
+}
+
+.bookings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  padding: 10px;
+}
+
+.qr {
+  width: 145px;
+  height: 145px;
+  margin: 10px, 10px;
+}
+
+.my-booking {
+  width: 700px;
+  padding: 20px;
+}
+
+.my-booking h3 {
+  padding-left: 10px
+}
+
+.my-booking p {
+  padding-left: 10px
+}
+
+.my-booking .btn-sm {
+  margin: 10px;
+}
