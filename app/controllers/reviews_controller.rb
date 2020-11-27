@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @workspace = Workspace.find(params[:workspace_id])
     @review.workspace = @workspace
+    @review.user = current_user
     @review.save
     redirect_to workspace_path(@workspace)
   end
