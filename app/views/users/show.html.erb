@@ -1,15 +1,17 @@
 <div class="container">
+  <div class="heading">
   <h2>My Bookings</h2>
+  </div>
   <% @bookings.each do |booking| %>
   <div class="bookings">
     <div class="qr">
       <%= @svg.html_safe %>
     </div>
   <div class="my-booking">
-    <%= booking.workspace.name %>:
-    <%= booking.start_time.strftime('%a %e %B %l:%M')%> -
+   <h3><%= booking.workspace.name %>:</h3>
+   <p><%= booking.start_time.strftime('%a %e %B %l:%M')%> -
     <%= booking.end_time.strftime('%a %e %B %l:%M')%>
-    for <%= booking.person_count %> people
+    for <%= booking.person_count %> people</p>
     <%= link_to 'Edit booking', edit_workspace_booking_path(booking.workspace, booking), class: "btn btn-success btn-sm" %>
   </div>
     </div>
