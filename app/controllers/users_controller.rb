@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @bookings = @user.bookings
-    qrcode = RQRCode::QRCode.new('http://github.com')
+    qrcode = RQRCode::QRCode.new('https://wa.me/<07929641799>')
     @svg = qrcode.as_svg(
       offset: 0,
       color: '000',

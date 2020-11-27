@@ -1,5 +1,4 @@
 <div class="container">
-  <h2><%=@workspace.name%></h2>
   <div class="top-container">
     <div class="top-leftside">
       <% if @workspace.photos.attached? %>
@@ -22,6 +21,9 @@
     </div>
   </div>
 
+<div class="heading">
+<h2><%=@workspace.name%></h2>
+</div>
 <div class="second-container">
   <div class= "leftside">
     <div class= "workspace-info">
@@ -40,13 +42,13 @@
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="tab-pane fade show active tab-background" id="home" role="tabpanel" aria-labelledby="home-tab">
           <p> <%= @workspace.description  %></p>
         </div>
-        <div class="tab-pane fade" id="price" role="tabpanel" aria-labelledby="price-tab">
+        <div class="tab-pane fade tab-background" id="price" role="tabpanel" aria-labelledby="price-tab">
           <p>£<%= @workspace.prices %> an hour</p>
         </div>
-        <div class="tab-pane fade" id="amenity" role="tabpanel" aria-labelledby="amenity-tab">
+        <div class="tab-pane fade tab-background" id="amenity" role="tabpanel" aria-labelledby="amenity-tab">
             <% @workspace.amenities. each do |amenity| %>
             <p> <%= amenity.name %> </p>
             <% end %>
