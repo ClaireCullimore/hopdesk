@@ -16,7 +16,7 @@
           <%= form_tag workspaces_path, :method => "get" do %>
           <%= text_field_tag :search_city, params[:search_city], class: "form-control rounded-left", placeholder: "South East London" %>
           <%= text_field_tag :search_distance, params[:search_distance], class: "form-control", placeholder: "Within 5 km" %>
-          <%= submit_tag "Search", class: "search-button"  %>
+          <%= submit_tag "Search", class: "btn btn-info" %>
       <% end %>
     </div>
     </div>
