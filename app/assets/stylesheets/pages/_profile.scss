@@ -15,10 +15,22 @@
 .qr {
   width: 145px;
   height: 145px;
-  margin: 0, auto;
+  margin: 10px, 10px;
 }
 
 .my-booking {
   width: 700px;
   padding: 20px;
+}
+
+.my-booking h3 {
+  padding-left: 10px
+}
+
+.my-booking p {
+  padding-left: 10px
+}
+
+.my-booking .btn-sm {
+  margin: 10px;
 }
