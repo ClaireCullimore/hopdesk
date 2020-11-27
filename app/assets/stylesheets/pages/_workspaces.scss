@@ -6,13 +6,16 @@
 }
 
 .workspaces-leftside {
-  width: 50%;
+  width: 60%;
   background-color: #F4F4F4;
 }
 
 
 .workspaces-rightside {
-  width: 50%;
+  width: 40%;
+  position: sticky;
+  top: 0;
+  height: 100vh;
   background-color: lightblue;
 }
 
