@@ -30,13 +30,15 @@ import "flatpickr/dist/flatpickr.min.css";
 import swal from 'sweetalert';
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
+// import { initSelect2 } from '../components/init_select2';
+  initMapbox();
   // Call your functions here, e.g:
   // initSelect2();
   const options = {enableTime: true, dateFormat: "d-m-Y h:i K"};
   flatpickr("#booking_start_time", options);
   flatpickr("#booking_end_time", options);
   // swal("Hello there!");
-});
+})
