@@ -15,16 +15,12 @@
           <%= link_to "HOME", root_path, class: "nav-link", data: {turbolinks: false} %>
         </li>
         <li class="nav-item">
-          <%= link_to "MEMBERSHIP", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
           <%= link_to "FIND A WORKSPACE", workspaces_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Account Page", user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Messages", "#", class: "dropdown-item" %>
             <%= link_to "Add a workspace", new_workspace_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
@@ -40,10 +36,10 @@
           <%= link_to "FIND A WORKSPACE", workspaces_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "LOGIN", new_user_session_path, class: "nav-link" %>
+          <%= link_to "LOG-IN", new_user_session_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "SIGNIN", new_user_registration_path, class: "nav-link" %>
+          <%= link_to "SIGN-UP", new_user_registration_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>
