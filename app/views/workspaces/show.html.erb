@@ -50,7 +50,7 @@
         </div>
         <div class="tab-pane fade tab-background" id="amenity" role="tabpanel" aria-labelledby="amenity-tab">
             <% @workspace.amenities. each do |amenity| %>
-            <p> <%= amenity.name %> </p>
+              <img src=<%= amenity_icon(amenity.name) %>/>
             <% end %>
         </div>
         <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
