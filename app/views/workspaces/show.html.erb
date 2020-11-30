@@ -65,7 +65,7 @@
 
           <div>
             <%= link_to 'Leave a review', new_workspace_review_path(@workspace), class: "btn btn-outline-success"%>
-          <% if current_user = @workspace.user %>
+          <% if current_user == @workspace.user %>
             <%= link_to 'Edit', edit_workspace_path(@workspace), class: "btn btn-outline-success"%>
           <% end %>
             <%= link_to 'Back', workspaces_path(@workspaces), class: "btn btn-outline-success"%>
