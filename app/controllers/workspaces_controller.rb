@@ -1,6 +1,13 @@
 class WorkspacesController < ApplicationController
   def index
-    @workspaces = Workspace.all
+    if params[:search_city].present? && params[:search_distance].present?
+      @workspaces = Workspace.near(params[:search_city], params[:search_distance], units: :km)
+      if @workspaces.empty?
+        @workspaces = Workspace.search_by_location(params[:search_city])
+      end
+    else
+      @workspaces = Workspace.all
+    end
 
     @markers = @workspaces.geocoded.map do |workspace|
       {
@@ -50,6 +57,6 @@ class WorkspacesController < ApplicationController
   private
 
   def strong_params
-    params.require(:workspace).permit(:name, :postcode, :amenities, :capacity, :prices, :description,  amenity_ids: [], photos: [])
+    params.require(:workspace).permit(:name, :first_address_line, :postcode, :city, :amenities, :capacity, :prices, :description, amenity_ids: [], photos: [])
   end
 end
