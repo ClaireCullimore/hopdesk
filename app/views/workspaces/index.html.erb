@@ -1,6 +1,15 @@
 
 <div class="workspaces">
   <div class="workspaces-leftside">
+    <div class="col-3 left-index">
+      <div class="filter mb-2">
+      <%= form_tag workspaces_path, method: :get do %>
+      <%= select_tag "workspaces", options_for_select(Artwork.pluck(:amenities), "wifi") %>
+      <%= hidden_field_tag "query", params[:query]%>
+      <%= submit_tag "Search", class: "btn btn-info" %>
+      <% end %>
+    </div>
+
     <div class="workspaces-cards">
       <% @workspaces.each do |workspace| %>
       <%= link_to workspace_path(workspace), class: "workspace-link" do %>
@@ -20,6 +29,7 @@
           <div class="icon-postcode">
             <i class="fas fa-thumbtack"></i>
             <p> <%= workspace.postcode %></p>
+            <p> <%= workspace.first_address_line %><p>
           </div>
         </div>
       </div>
