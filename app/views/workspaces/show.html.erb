@@ -2,7 +2,7 @@
   <div class="top-container">
     <div class="top-leftside">
       <% if @workspace.photos.attached? %>
-      <%= cl_image_tag @workspace.photos.first.key, height: 435, width: 856, crop: :fill, id:"img-large" %>
+        <%= cl_image_tag @workspace.photos.first.key, height: 435, width: 856, crop: :fill, id:"img-large" %>
       <% else %>
         <img id="img-large" class="img-zoom-container" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
       <% end %>
@@ -11,7 +11,7 @@
       <div class="small-images">
         <% if @workspace.photos.attached? %>
           <% @workspace.photos.last(2).each do |photo| %>
-          <%= cl_image_tag photo.key, height: 176, width: 198, crop: :fill, id:"img-small" %>
+            <%= cl_image_tag photo.key, height: 176, width: 198, crop: :fill, id:"img-small" %>
           <% end %>
         <% else %>
           <img class="top-image" id="img-small" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
@@ -21,65 +21,71 @@
     </div>
   </div>
 
-<div class="heading">
-<h2><%=@workspace.name%></h2>
-</div>
-<div class="second-container">
-  <div class= "leftside">
-    <div class= "workspace-info">
+  <div class="heading">
+    <h2><%=@workspace.name%></h2>
+  </div>
+
+  <div class="second-container">
+    <div class= "leftside">
+      <div class= "workspace-info">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Overview</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#price" role="tab" aria-controls="price" aria-selected="false">Price</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="amenity-tab" data-toggle="tab" href="#amenity" role="tab" aria-controls="amenity" aria-selected="false">Amenities</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active tab-background" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <p> <%= @workspace.description  %></p>
-        </div>
-        <div class="tab-pane fade tab-background" id="price" role="tabpanel" aria-labelledby="price-tab">
-          <p>£<%= @workspace.prices %> an hour</p>
-        </div>
-        <div class="tab-pane fade tab-background" id="amenity" role="tabpanel" aria-labelledby="amenity-tab">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#price" role="tab" aria-controls="price" aria-selected="false">Price</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="amenity-tab" data-toggle="tab" href="#amenity" role="tab" aria-controls="amenity" aria-selected="false">Amenities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active tab-background" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <p> <%= @workspace.description  %></p>
+          </div>
+          <div class="tab-pane fade tab-background" id="price" role="tabpanel" aria-labelledby="price-tab">
+            <p>£<%= @workspace.prices %> an hour</p>
+          </div>
+          <div class="tab-pane fade tab-background" id="amenity" role="tabpanel" aria-labelledby="amenity-tab">
             <% @workspace.amenities. each do |amenity| %>
               <img src=<%= amenity_icon(amenity.name) %>/>
             <% end %>
+          </div>
+          <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+            <ul class="list-group">
+              <% @workspace.reviews.each do |review| %>
+                <li class="list-group-item"><%= review.content %><br><i><%= review.user.email%> - <%= review.created_at.strftime("%A, %b %d") %></i></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
-        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-          <ul class="list-group">
-            <% @workspace.reviews.each do |review| %>
-            <li class="list-group-item"><%= review.content %><br><i><%= review.user.email%> - <%= review.created_at.strftime("%A, %b %d") %></i></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-      <div class= "backbutton">
-          <%= link_to 'Leave a review', new_workspace_review_path(@workspace), class: "btn btn-outline-success"%>
-          <%= link_to 'Edit', edit_workspace_path(@workspace), class: "btn btn-outline-success"%>
-          <%= link_to 'Back', workspaces_path(@workspaces), class: "btn btn-outline-success"%>
-      </div>
-    </div>
-  </div>
 
-  <div class= "rightside">
-    <div class= "bookingform p-3">
-      <h3>Book Now</h3>
-          <%= simple_form_for [@workspace, Booking.new] do |f| %>
-          <%= f.input :person_count %>
-          <%= f.input :start_time, as: :string %>
-          <%= f.input :end_time, as: :string %>
-          </br>
-          <%= f.button :submit, class: "btn btn-info", id:"book-now" %>
-        <% end %>
+          <div>
+            <%= link_to 'Leave a review', new_workspace_review_path(@workspace), class: "btn btn-outline-success"%>
+          <% if current_user == @workspace.user %>
+            <%= link_to 'Edit', edit_workspace_path(@workspace), class: "btn btn-outline-success"%>
+          <% end %>
+            <%= link_to 'Back', workspaces_path(@workspaces), class: "btn btn-outline-success"%>
+          </div>
+      </div>
     </div>
+
+    <% if current_user != @workspace.user %>
+      <div class= "rightside">
+        <div class= "bookingform p-3">
+          <h3>Book Now</h3>
+          <%= simple_form_for [@workspace, Booking.new] do |f| %>
+            <%= f.input :person_count %>
+            <%= f.input :start_time, as: :string %>
+            <%= f.input :end_time, as: :string %>
+            </br>
+            <%= f.button :submit, class: "btn btn-info", id:"book-now" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
-</div>
 </div>
