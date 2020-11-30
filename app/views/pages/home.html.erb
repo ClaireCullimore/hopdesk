@@ -12,13 +12,15 @@
   <div class="home-text-container">
     <div class= "home-text">
       <h2>Find your Local Workspace</h2>
-        <div class="index-form form-inline justify-content-center m-3">
+      <div class="index-form form-inline justify-content-center">
+        <div class="search-form">
           <%= form_tag workspaces_path, :method => "get" do %>
-          <%= text_field_tag :search_city, params[:search_city], class: "form-control rounded-left", placeholder: "Postcode" %>
-          <%= text_field_tag :search_distance, params[:search_distance], class: "form-control", placeholder: "km radius" %>
-          <%= submit_tag "Search", class: "btn btn-info" %>
-      <% end %>
-    </div>
+            <%= text_field_tag :search_city, params[:search_city], class: "form-control rounded-left", placeholder: "City or Postcode" %>
+            <%= text_field_tag :search_distance, params[:search_km_distance], class: "form-control", placeholder: "km radius" %>
+            <%= submit_tag "Search", class: "btn btn-info" %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
