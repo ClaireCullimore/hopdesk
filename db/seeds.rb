@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Amenity.destroy_all
 
-amenities = Amenity.create!([{name: 'Sockets'}, {name: 'WiFi'}, name: 'Coffee'])
+amenities = Amenity.create!([{ name: 'Sockets' }, { name: 'WiFi' }, { name: 'Coffee' }, { name: 'Laptop-space' }, { name: 'Covid-friendly' }])

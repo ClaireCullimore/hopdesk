@@ -49,9 +49,11 @@
           <p>£<%= @workspace.prices %> an hour</p>
         </div>
         <div class="tab-pane fade tab-background" id="amenity" role="tabpanel" aria-labelledby="amenity-tab">
+          <ul class="list-group">
             <% @workspace.amenities. each do |amenity| %>
-              <img src=<%= amenity_icon(amenity.name) %>/>
+              <li class="icons"><img src=<%= amenity_icon(amenity.name) %>/></li>
             <% end %>
+          </ul>
         </div>
         <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
           <ul class="list-group">
