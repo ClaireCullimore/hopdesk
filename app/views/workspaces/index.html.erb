@@ -4,7 +4,7 @@
     <div class="col-3 left-index">
       <div class="filter mb-2">
       <%= form_tag workspaces_path, method: :get do %>
-      <%= select_tag "workspaces", options_for_select(Artwork.pluck(:amenities), "wifi") %>
+      <%= select_tag "workspaces", options_for_select(Workspace.pluck(:amenities), "wifi") %>
       <%= hidden_field_tag "query", params[:query]%>
       <%= submit_tag "Search", class: "btn btn-info" %>
       <% end %>

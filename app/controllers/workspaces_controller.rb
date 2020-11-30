@@ -7,7 +7,6 @@ class WorkspacesController < ApplicationController
         lat: workspace.latitude,
         lng: workspace.longitude
       }
-
     end
   end
 
