@@ -1,13 +1,23 @@
 class WorkspacesController < ApplicationController
   def index
     @workspaces = Workspace.all
+    if params.dig(:index_search, :search_city).present? && params.dig(:index_search, :search_distance).present?
+      @workspaces = @workspaces.near(params.dig(:index_search, :search_city), params.dig(:index_search, :search_distance), units: :km)
+      if @workspaces.empty?
+        @workspaces = Workspace.search_by_location(params.dig(:index_search, :search_city))
+      end
+    end
+    amenities = params.dig(:index_search, :amenities)&.reject { |amenity| amenity.blank? }
+    if amenities && amenities.length > 0
+      @workspaces = @workspaces.joins(workspace_amenities: :amenity).where(workspace_amenities: { amenities: { name: amenities } })
+    end
 
     @markers = @workspaces.geocoded.map do |workspace|
       {
         lat: workspace.latitude,
-        lng: workspace.longitude
+        lng: workspace.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { workspace: workspace })
       }
-
     end
   end
 
@@ -51,6 +61,6 @@ class WorkspacesController < ApplicationController
   private
 
   def strong_params
-    params.require(:workspace).permit(:name, :postcode, :amenities, :capacity, :prices, :description,  amenity_ids: [], photos: [])
+    params.require(:workspace).permit(:name, :first_address_line, :postcode, :city, :amenities, :capacity, :prices, :description, amenity_ids: [], photos: [])
   end
 end

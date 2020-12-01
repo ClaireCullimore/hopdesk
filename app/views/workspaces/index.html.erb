@@ -1,14 +1,20 @@
 
 <div class="workspaces">
   <div class="workspaces-leftside">
-    <div class="col-3 left-index">
-      <div class="filter mb-2">
-      <%= form_tag workspaces_path, method: :get do %>
-      <%= select_tag "workspaces", options_for_select(Workspace.pluck(:amenities), "wifi") %>
-      <%= hidden_field_tag "query", params[:query]%>
-      <%= submit_tag "Search", class: "btn btn-info" %>
-      <% end %>
-    </div>
+    <div class="index-form form-inline justify-content-center">
+        <div class="search-form">
+          <%= simple_form_for :index_search, url: workspaces_path, method: :get, html: { class: 'w-100' } do |f| %>
+            <div class="form-inline">
+              <%= f.input :search_city, class: "form-control rounded-left", placeholder: "City or Postcode", label: false %>
+              <%= f.input :search_distance, class: "form-control", placeholder: "Km radius", label: false  %>
+            </div>
+            <div class="form-inline">
+            <%= f.input :amenities, as: :check_boxes, collection: Amenity.pluck(:name), input_html: { multiple: true }, label: false, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
+            <%= f.submit "Search", class: "btn btn-info"%>
+            </div>
+          <% end %>
+        </div>
+      </div>
 
     <div class="workspaces-cards">
       <% @workspaces.each do |workspace| %>
@@ -22,14 +28,15 @@
         <div class="product-cards">
           <h2 class="workspace-card-name"> <%= workspace.name %></h2>
           <div class="card-icons">
-            <img src="https://img.icons8.com/wired/64/000000/wifi-logo.png"/>
-            <img src="https://img.icons8.com/wired/64/000000/tea.png"/>
-            <img src="https://img.icons8.com/dotty/80/000000/clean-hands.png"/>
+            <% workspace.amenities.each do |amenity| %>
+              <%= image_tag amenity_icon(amenity.name), alt: "alttext" %>
+            <% end  %>
           </div>
           <div class="icon-postcode">
             <i class="fas fa-thumbtack"></i>
             <p> <%= workspace.postcode %></p>
             <p> <%= workspace.first_address_line %><p>
+            <p> <%= workspace.city %><p>
           </div>
         </div>
       </div>
