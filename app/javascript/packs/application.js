@@ -28,9 +28,14 @@ import "bootstrap";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import swal from 'sweetalert';
+import { initSweetalert } from '../plugins/init_sweetalert';
+import { changeToConfirm } from '../components/confirm_buttons';
+
+
 
 // Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';
+
 
 document.addEventListener('turbolinks:load', () => {
 // import { initSelect2 } from '../components/init_select2';
@@ -41,4 +46,11 @@ document.addEventListener('turbolinks:load', () => {
   flatpickr("#booking_start_time", options);
   flatpickr("#booking_end_time", options);
   // swal("Hello there!");
-})
+  const submitButton = document.getElementById('book-now');
+    initSweetalert('#sweet-alert-demo', {
+        title: "Thank you for your booking",
+        text: "Please wait for confirmation. See account page",
+      }, (value) => {
+        submitButton.click();
+      });
+});
