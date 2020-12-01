@@ -14,4 +14,8 @@ class Workspace < ApplicationRecord
       using: {
         tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+
+  def average
+    reviews.average(:rating).to_f.round(1)
+  end
 end
