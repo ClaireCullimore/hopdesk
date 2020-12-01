@@ -61,6 +61,8 @@
           </div>
           <div class=" tab-content tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
             <ul class="list-group">
+
+
               <% @workspace.reviews.each do |review| %>
                 <li class="list-group-item">
                   <% review.rating.to_i.times do %>
@@ -87,14 +89,15 @@
         <div class= "bookingform p-3">
           <h3>Book Now</h3>
           <%= simple_form_for [@workspace, Booking.new] do |f| %>
-            <%= f.input :person_count %>
-            <%= f.input :start_time, as: :string %>
-            <%= f.input :end_time, as: :string %>
-            </br>
-            <%= f.button :submit, class: "btn btn-info", id:"book-now" %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+          <%= f.input :person_count %>
+          <%= f.input :start_time, as: :string %>
+          <%= f.input :end_time, as: :string %>
+          </br>
+          <%= f.button :submit, class: "btn btn-info", id:"book-now" %>
+          <div class="price-target" data-rate="<%= @workspace.prices %>" id="total-price">
+        total: £0
+         </div>
+        <% end %>
+    </div>
   </div>
 </div>

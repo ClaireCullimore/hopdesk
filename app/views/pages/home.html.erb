@@ -16,7 +16,7 @@
         <div class="search-form">
           <%= form_tag workspaces_path, :method => "get" do %>
             <%= text_field_tag :search_city, params[:search_city], class: "form-control rounded-left", placeholder: "City or Postcode" %>
-            <%= text_field_tag :search_distance, params[:search_km_distance], class: "form-control", placeholder: "km radius" %>
+            <%= text_field_tag :search_distance, params[:search_km_distance], class: "form-control", placeholder: "Km radius" %>
             <%= submit_tag "Search", class: "btn btn-info" %>
           <% end %>
         </div>
@@ -122,7 +122,13 @@
     </div>
   </div>
 </div>
-
+<div class="large-card">
+  <div class="text-card">
+    <h2>List your Workspace for free and get more bookings!</h2>
+    <p>If you have availability for people to work in your cafe, bar, pub or office, for a few hours or the day, list it with HopDesk to bring it more customers. </p>
+    <%= link_to "Search", new_workspace_path, class: "btn btn-info" %>
+  </div>
+</div>
 <div class= "reviews-image">
   <h2>What people say</h2>
   <div class="speech-bubble">
