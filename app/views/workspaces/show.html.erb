@@ -78,6 +78,9 @@
           <%= f.input :end_time, as: :string %>
           </br>
           <%= f.button :submit, class: "btn btn-info", id:"book-now" %>
+          <div class="price-target" data-rate="<%= @workspace.prices %>" id="total-price">
+        total: £0
+         </div>
         <% end %>
     </div>
   </div>
