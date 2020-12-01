@@ -19,7 +19,7 @@
         <% end %>
       </div>
     </div>
-  </div>
+</div>
 
   <div class="heading">
     <h2><%= @workspace.name %></h2>
@@ -95,9 +95,12 @@
           </br>
           <%= f.button :submit, class: "btn btn-info", id:"book-now" %>
           <div class="price-target" data-rate="<%= @workspace.prices %>" id="total-price">
-        total: £0
-         </div>
+            total: £0
+        </div>
         <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
