@@ -61,6 +61,8 @@
           </div>
           <div class=" tab-content tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
             <ul class="list-group">
+
+
               <% @workspace.reviews.each do |review| %>
                 <li class="list-group-item">
                   <% review.rating.to_i.times do %>
