@@ -1,7 +1,7 @@
-<div class="form">
-  <div class="container">
+<div class="container">
+  <div class="form-container">
     <div class="large-card-new">
-      <h2>Edit a hopdesk space</h2>
+      <h2>Edit <%= @workspace.name %> </h2>
       <p>Invite people to work in your empty spaces and earn some extra income!</p>
       <%= simple_form_for @workspace do |f| %>
         <%= f.input :name %>

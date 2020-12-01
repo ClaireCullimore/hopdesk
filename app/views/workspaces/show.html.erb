@@ -27,6 +27,12 @@
   <div class="address">
     <h3><%= @workspace.first_address_line %> <%= @workspace.city %> <%= @workspace.postcode %></h3>
   </div>
+  <div class="rating">
+    <p> <em>Avg Rating:</em> <% @workspace.average.floor.times do  %>
+      <i class="far fa-star"></i>
+      <% end %></p>
+  </div>
+
 
   <div class="second-container">
     <div class= "leftside">
@@ -68,7 +74,8 @@
                   <% review.rating.to_i.times do %>
                     <i class="far fa-star"></i>
                   <% end %><br>
-                  <%= review.content %><br><i><%= review.user.first_name%> - <%= review.created_at.strftime("%A, %b %d") %></i>
+                  <%= review.content %><br>
+                  <i><%= review.user.first_name%> - <%= review.created_at.strftime("%A, %b %d") %></i>
                 </li>
               <% end %>
             </ul>
