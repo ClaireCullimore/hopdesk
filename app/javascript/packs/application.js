@@ -28,11 +28,13 @@ import "bootstrap";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import swal from 'sweetalert';
-import { imageSwapper } from "../Functions/imageSwapper";
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 // Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';
 import { updatePrice } from '../helper_functions/updatePrice';
+import { imageSwapper } from "../Functions/imageSwapper";
+
 
 document.addEventListener('turbolinks:load', () => {
 // import { initSelect2 } from '../components/init_select2';
@@ -45,14 +47,17 @@ document.addEventListener('turbolinks:load', () => {
   flatpickr("#booking_start_time", options);
   flatpickr("#booking_end_time", options);
   updatePrice();
-  // swal("Hello there!");
-})
-
+  const submitButton = document.getElementById('book-now');
+    initSweetalert('#sweet-alert-demo', {
+        title: "Thank you for your booking",
+        text: "Please wait for confirmation. See account page",
+      }, (value) => {
+        submitButton.click();
+      });
+});
 
 // create file component js "update price"
 // get the hourly rate
 // check user changes for the 3 inputs and get the date, time and nb of people
 // calculate total
 // display total on the page
-
-
