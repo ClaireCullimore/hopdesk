@@ -28,6 +28,7 @@ import "bootstrap";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import swal from 'sweetalert';
+import { imageSwapper } from "../Functions/imageSwapper";
 
 // Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';
@@ -38,7 +39,7 @@ document.addEventListener('turbolinks:load', () => {
   console.log("Hey there!")
   initMapbox();
   updatePrice();
-  // Call your functions here, e.g:
+  imageSwapper();
   // initSelect2();
   const options = {enableTime: true, dateFormat: "d-m-Y h:i K"};
   flatpickr("#booking_start_time", options);

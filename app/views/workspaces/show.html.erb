@@ -10,12 +10,12 @@
     <div class="top-rightside">
       <div class="small-images">
         <% if @workspace.photos.attached? %>
-          <% @workspace.photos.last(2).each do |photo| %>
-            <%= cl_image_tag photo.key, height: 176, width: 198, crop: :fill, id:"img-small" %>
+          <% @workspace.photos.last(2).each_with_index do |photo, index| %>
+            <%= cl_image_tag photo.key, height: 176, width: 198, crop: :fill, class: "img-small", id:"right-#{index}" %>
           <% end %>
         <% else %>
-          <img class="top-image" id="img-small" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
-          <img class="bottom-image" id="img-small" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
+          <img class="top-image img-small" id="top-right" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
+          <img class="bottom-image img-small" id="bottom-right" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
         <% end %>
       </div>
     </div>

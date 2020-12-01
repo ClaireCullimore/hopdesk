@@ -1,10 +1,10 @@
 <div class="container">
-  <h2>My Bookings - edit</h2>
+  <h2>Edit My Booking</h2>
   <h3><%= @booking.workspace.name %></h3>
-  <h3><%= @booking.workspace.postcode %></h3>
-  <h3><%= @booking.person_count %></h3>
-  <h3><%= @booking.start_time %></h3>
-  <h3><%= @booking.end_time %></h3>
+  <h3><%= @booking.workspace.first_address_line %>, <%= @booking.workspace.postcode %></h3>
+  <h3><%= @booking.start_time.strftime('%a %e %B %l:%M') %></h3>
+  <h3><%= @booking.end_time.strftime('%a %e %B %l:%M') %></h3>
+  <h3>Number of guests: <%= @booking.person_count %></h3>
 
   <div class="container">
     <h2>Edit your Booking</h2>
@@ -25,3 +25,4 @@
   </br>
     <%= link_to 'Back', user_path(current_user), class: "btn btn-primary" %>
 </div>
+
