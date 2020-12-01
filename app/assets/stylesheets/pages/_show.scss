@@ -11,6 +11,10 @@
   font-weight: bolder;
 }
 
+.rating p {
+  margin-left: 30px;
+}
+
 .top-container {
   display: flex;
 }
@@ -38,7 +42,7 @@
   height: 415px;
 }
 
-#img-small {
+.img-small {
   margin-bottom: 10px;
   width: 198px;
   height: 176px;
@@ -77,7 +81,6 @@
 }
 
 .leftside {
-  display: flex;
   flex-direction: column;
   align-item: left;
 }
@@ -103,7 +106,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
+
+.fa {
+  color: black;
+}
+.fa-star {
+  color: #538885;
+  font-size: 20px;
+  padding: 5px;
+}
+
 
 .bookingform {
   width: 350px;
