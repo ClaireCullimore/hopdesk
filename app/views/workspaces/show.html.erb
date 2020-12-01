@@ -58,8 +58,10 @@
           </div>
           <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
             <ul class="list-group">
-              <% @workspace.reviews.each do |review| %>
-                <li class="list-group-item"><%= review.content %><br><i><%= review.user.email%> - <%= review.created_at.strftime("%A, %b %d") %></i></li>
+              <% if @workspace.reviews.any? %>
+                <% @workspace.reviews.each do |review| %>
+                  <li class="list-group-item"><%= review.content %><br><i><%= review.user.email%> - <%= review.created_at.strftime("%A, %b %d") %></i></li>
+                <% end %>
               <% end %>
             </ul>
         </div>
