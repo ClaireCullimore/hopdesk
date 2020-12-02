@@ -2,10 +2,10 @@
   <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-pause="false" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="https://images.unsplash.com/photo-1601933470198-75ebdfa8e740?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="First slide">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1508349083404-75b96ae8f41a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80" alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://images.unsplash.com/photo-1534430071631-854ff55eec78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=714&q=80" alt="Second slide">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1533264701333-1ebf1dacc05d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80" alt="Second slide">
       </div>
     </div>
   </div>
@@ -14,10 +14,12 @@
       <h2>Find your Local Workspace</h2>
       <div class="index-form form-inline justify-content-center">
         <div class="search-form">
-          <%= form_tag workspaces_path, :method => "get" do %>
-            <%= text_field_tag :search_city, params[:search_city], class: "form-control rounded-left", placeholder: "City or Postcode" %>
-            <%= text_field_tag :search_distance, params[:search_km_distance], class: "form-control", placeholder: "Km radius" %>
-            <%= submit_tag "Search", class: "btn btn-info" %>
+          <%= simple_form_for :index_search, url: workspaces_path, method: :get do |f| %>
+            <div class="form-inline">
+              <%= f.input :search_city, class: "form-control rounded-left", placeholder: "Area or Postcode", label: false %>
+              <%= f.input :search_distance, class: "form-control", placeholder: "Km radius", label: false  %>
+             <%= f.submit "Search", class: "btn btn-info"%>
+            </div>
           <% end %>
         </div>
       </div>
@@ -122,28 +124,41 @@
     </div>
   </div>
 </div>
-<div class="large-card">
+<div class="large-card-two">
   <div class="text-card">
     <h2>List your Workspace for free and get more bookings!</h2>
-    <p>If you have availability for people to work in your cafe, bar, pub or office, for a few hours or the day, list it with HopDesk to bring it more customers. </p>
-    <%= link_to "Search", new_workspace_path, class: "btn btn-info" %>
+    <p>If you have availability for people to work in your cafe, bar, pub or office, for a few hours or for the day, list it with HopDesk to bring it more customers. </p>
+    <img id="workspace-image" src="https://www.tagvenue.com/build/images/homepage/list-your-venue.svg" alt="">
   </div>
+    <%= link_to "List your workspace", new_workspace_path, class: "btn btn-info" %>
 </div>
 <div class= "reviews-image">
   <h2>What people say</h2>
   <div class="speech-bubble">
     <div class="circular-sb">
       <p>Quick to book online. The cafe was charming and my puppy Labradooble was also very welcome!.</p>
+      </br>
+      <div>
+        <h6> - juan@me.com</h6>
+      </div>
       <div class="circle1"></div>
         <div class="circle2"></div>
     </div>
      <div class="circular-sb">
-      <p>Been coming for over a year and had no issues or problems, thank you.</p>
+      <p>Been coming to The Old George since my office shut. Super friendly workspace, thank you.</p>
+      </br>
+      <div>
+        <h6> - fran@gmail.com</h6>
+      </div>
       <div class="circle1"></div>
         <div class="circle2"></div>
     </div>
      <div class="circular-sb">
       <p>Really easy and flexible to just pay for the days/hours we need each week. </p>
+      </br>
+      <div>
+        <h6> - sam@hotmail.com</h6>
+      </div>
       <div class="circle1"></div>
         <div class="circle2"></div>
     </div>

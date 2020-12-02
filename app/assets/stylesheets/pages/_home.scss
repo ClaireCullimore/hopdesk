@@ -13,23 +13,22 @@
 .index-form {
   background-color: #FFF;
   margin: auto;
-  width: 650px;
+  width: 593px;
   padding: 10px;
   border-radius: 4px;
 
-}
 
-.home-text {
+}
   .search-form {
     width: 100%;
 
-    #search_city{
+    #index_search_search_city{
     border: 1px solid white;
     border-right: 1px solid hsla(0,0%,59.2%,.3);
     font-size: 18px;
 
     }
-    #search_distance {
+    #index_search_search_distance {
       border: 1px solid white;
       font-size: 18px;
       padding-left: 20px;
@@ -46,7 +45,7 @@
       font-size: 20px;
     }
   }
-}
+
 
 
 .home-text-container {
@@ -62,7 +61,7 @@
   font-size: 60px;
   color: white;
   text-shadow: 1px 1px 1px #538885;
-  padding-top: 150px;
+  padding-top: 115px;
   margin-bottom: 20px;
 }
 
@@ -190,6 +189,54 @@
   }
 }
 
+.large-card-two {
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: #E8E8E8;
+  width: 100%;
+  height: 570px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
+
+  .text-card {
+    width: 1000px;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-family: "Work Sans", "Helvetica", "sans-serif";
+
+    h2 {
+      color: #538885;
+      margin-bottom: 20px;
+    }
+  }
+
+}
+
+.btn {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 30px;
+      padding-right: 30px;
+      color: white;
+      font-size: 20px;
+
+    a:hover {
+      color: white;
+    }
+}
+
+#workspace-image {
+  width: 500px;
+  height: 314px;
+}
+
 .small-image {
   height: 400px;
   width: 400px;
@@ -232,7 +279,6 @@
   background-color: white;
   font-family: Montserrat, sans-serif;
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.3);
-  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -241,6 +287,11 @@
     color: #538885;
     width: 200px;
     margin: auto;
+  }
+
+  h6 {
+    font-style: italic;
+    margin-left: 80px;
   }
 }
 
