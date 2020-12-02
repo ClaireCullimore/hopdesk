@@ -15,7 +15,7 @@
       <div class="index-form form-inline justify-content-center">
         <div class="search-form">
           <%= simple_form_for :index_search, url: workspaces_path, method: :get do |f| %>
-            <div class="form-inline">
+            <div class="form-line">
               <%= f.input :search_city, class: "form-control rounded-left", placeholder: "Area or Postcode", label: false %>
               <%= f.input :search_distance, class: "form-control", placeholder: "Km radius", label: false  %>
              <%= f.submit "Search", class: "btn btn-info"%>

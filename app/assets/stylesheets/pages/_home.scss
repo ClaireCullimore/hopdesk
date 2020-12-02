@@ -10,12 +10,17 @@
   }
 }
 
+.form-line {
+  display: flex;
+}
+
 .index-form {
   background-color: #FFF;
   margin: auto;
-  width: 593px;
+  width: 611px;
   padding: 10px;
   border-radius: 4px;
+  display:flex;
 
 
 }
