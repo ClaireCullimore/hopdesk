@@ -83,11 +83,11 @@
             </ul>
         </div>
           <div>
-            <%= link_to 'Leave a review', new_workspace_review_path(@workspace), class: "btn btn-outline-success show-btn"%>
+            <%= link_to 'Leave a review', new_workspace_review_path(@workspace), class: "btn-edit btn btn-info "%>
           <% if current_user == @workspace.user %>
-            <%= link_to 'Edit', edit_workspace_path(@workspace), class: "btn btn-outline-success show-btn"%>
+            <%= link_to 'Edit', edit_workspace_path(@workspace), class: "btn-edit btn btn-info"%>
           <% end %>
-            <%= link_to 'Back', workspaces_path(@workspaces), class: "btn btn-outline-success show-btn"%>
+            <%= link_to 'Back', workspaces_path(@workspaces), class: "btn-edit btn btn-info"%>
           </div>
         </div>
       </div>
@@ -96,7 +96,7 @@
     <% if current_user != @workspace.user %>
       <div class= "rightside">
         <div class= "bookingform p-3">
-          <h3>Book Now</h3>
+          <h3>Reserve this space</h3>
           <%= simple_form_for [@workspace, Booking.new] do |f| %>
             <%= f.input :person_count %>
             <%= f.input :start_time, as: :string %>

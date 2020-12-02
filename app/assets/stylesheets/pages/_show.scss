@@ -1,6 +1,6 @@
 .info {
   background-color: #FFF;
-  width: 1025px;
+  width: 647px;
   height: 150px;
   margin-left: 30px;
   padding: 20px;
@@ -120,6 +120,12 @@ a:hover {
   margin-bottom: 10px;
 }
 
+.btn-edit {
+  padding: 15px;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
 .show-btn {
   margin-top: 10px;
 }
@@ -142,7 +148,7 @@ a:hover {
 
 .bookingform {
   width: 350px;
-  height: 500px;
+  height: 475px;
   margin-right: 35px;
   font-size: 16px;
   border: 1px solid $my-blue;
