@@ -1,12 +1,12 @@
 div.form-container {
   display: block;
-  padding-left: 10px;
+  padding: 30px;
 }
 
 .form-container {
   margin-top: 20px;
-  width: 600px;
-  padding: 15px;
+  width: 800px;
+  padding: 30px, 30px;
   background-color: #fff;
   display: inline-block;
   margin-left: auto;
@@ -14,12 +14,17 @@ div.form-container {
   text-align: left;
 }
 
+.links {
+  display: flex;
+}
+
 .fa {
   color: black;
 }
 .fa-trash-alt {
   color: #FFC65A;
-  font-size: 25px;
+  font-size: 50px;
   padding: 5px;
+  margin-left: 30px;
 }
 

@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="heading">
-    My Bookings
+  <div class="heading-user">
+    <h2>My Bookings</h2>
   </div>
   <% @bookings.each do |booking| %>
     <div class="bookings">
@@ -12,10 +12,10 @@
        <p><%= booking.start_time.strftime('%a %e %B %l:%M')%> -
         <%= booking.end_time.strftime('%a %e %B %l:%M')%>
         for <%= booking.person_count %> people</p>
-        <p> £ <%= (booking.end_time - booking.start_time) / 3600 * booking.workspace.prices * booking.person_count %></p>
-       <p><%= link_to "Get in touch", 'https://wa.me/447929641799', target: "_blank" %></p>
+        <p><%= number_to_currency((booking.end_time - booking.start_time) / 3600 * booking.workspace.prices * booking.person_count, unit: :£) %> to pay at venue </p>
+       <p><%= link_to "Get in touch with the venue", 'https://wa.me/447929641799', target: "_blank" %></p>
       </div>
-      <%= link_to 'Edit booking', edit_workspace_booking_path(booking.workspace, booking), class: "btn btn-success btn-sm booking-edit-link" %>
+      <%= link_to 'Edit booking', edit_workspace_booking_path(booking.workspace, booking), class: "btn btn-info btn-sm booking-edit-link" %>
     </div>
   <% end %>
 </div>
