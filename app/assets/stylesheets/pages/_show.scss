@@ -124,3 +124,19 @@
   padding: 30px;
   color: ¢my-blue;
 }
+
+.price-target {
+  font-size: 17px;
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
+  letter-spacing: 1.5px;
+  color: rgb(14,1,1);
+  position: relative;
+  bottom: 15px;
+}
+
+.price-target:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+}

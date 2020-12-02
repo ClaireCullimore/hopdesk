@@ -40,10 +40,9 @@ document.addEventListener('turbolinks:load', () => {
   updatePrice();
   // Call your functions here, e.g:
   // initSelect2();
-  const options = {enableTime: true, dateFormat: "d-m-Y h:i K"};
+  const options = {enableTime: true, altFormat: "d-m-Y h:i K", altInput: true};
   flatpickr("#booking_start_time", options);
   flatpickr("#booking_end_time", options);
-  updatePrice();
   // swal("Hello there!");
 })
 
