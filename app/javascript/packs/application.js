@@ -38,7 +38,6 @@ import { imageSwapper } from "../Functions/imageSwapper";
 
 document.addEventListener('turbolinks:load', () => {
 // import { initSelect2 } from '../components/init_select2';
-  console.log("Hey there!")
   initMapbox();
   updatePrice();
   imageSwapper();
@@ -46,7 +45,6 @@ document.addEventListener('turbolinks:load', () => {
   const options = {enableTime: true, dateFormat: "d-m-Y h:i K"};
   flatpickr("#booking_start_time", options);
   flatpickr("#booking_end_time", options);
-  updatePrice();
   const submitButton = document.getElementById('book-now');
     initSweetalert('#sweet-alert-demo', {
         title: "Thank you for your booking",
