@@ -10,16 +10,16 @@
     <div class="top-rightside">
       <div class="small-images">
         <% if @workspace.photos.attached? %>
-          <% @workspace.photos.last(2).each do |photo| %>
-            <%= cl_image_tag photo.key, height: 176, width: 198, crop: :fill, id:"img-small" %>
+          <% @workspace.photos.last(2).each_with_index do |photo, index| %>
+            <%= cl_image_tag photo.key, height: 176, width: 198, crop: :fill, class: "img-small", id:"right-#{index}" %>
           <% end %>
         <% else %>
-          <img class="top-image" id="img-small" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
-          <img class="bottom-image" id="img-small" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
+          <img class="top-image img-small" id="top-right" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
+          <img class="bottom-image img-small" id="bottom-right" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="workspace">
         <% end %>
       </div>
     </div>
-  </div>
+</div>
 
   <div class="heading">
     <h2><%= @workspace.name %></h2>
@@ -27,6 +27,12 @@
   <div class="address">
     <h3><%= @workspace.first_address_line %> <%= @workspace.city %> <%= @workspace.postcode %></h3>
   </div>
+  <div class="rating">
+    <p> <em>Avg Rating:</em> <% @workspace.average.floor.times do  %>
+      <i class="far fa-star"></i>
+      <% end %></p>
+  </div>
+
 
   <div class="second-container">
     <div class= "leftside">
@@ -68,7 +74,8 @@
                   <% review.rating.to_i.times do %>
                     <i class="far fa-star"></i>
                   <% end %><br>
-                  <%= review.content %><br><i><%= review.user.first_name%> - <%= review.created_at.strftime("%A, %b %d") %></i>
+                  <%= review.content %><br>
+                  <i><%= review.user.first_name%> - <%= review.created_at.strftime("%A, %b %d") %></i>
                 </li>
               <% end %>
             </ul>
@@ -83,7 +90,6 @@
           </div>
       </div>
     </div>
-
     <div class= "rightside">
       <div class= "bookingform p-3">
         <h3>Book Now</h3>
@@ -92,11 +98,26 @@
           <%= f.input :start_time, as: :string %>
           <%= f.input :end_time, as: :string %>
           </br>
-          <div class="price-target" data-rate="<%= @workspace.prices %>" id="total-price">
-            Total = £0
-          </div>
           <%= f.button :submit, class: "btn btn-info", id:"book-now" %>
         <% end %>
+  </div>
+    <% if current_user != @workspace.user %>
+      <div class= "rightside">
+        <div class= "bookingform p-3">
+          <h3>Book Now</h3>
+          <%= simple_form_for [@workspace, Booking.new] do |f| %>
+            <%= f.input :person_count %>
+            <%= f.input :start_time, as: :string %>
+            <%= f.input :end_time, as: :string %>
+            </br>
+                <div class="price-target" data-rate="<%= @workspace.prices %>" id="total-price">
+              total: £0
+                </div>
+            <%= f.submit "", class: "btn btn-info", id:"book-now", class: "hidden" %>
+            <button id="sweet-alert-demo" class="btn btn-info">Book Now!</button>
+        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
 </div>

@@ -64,3 +64,4 @@ class WorkspacesController < ApplicationController
     params.require(:workspace).permit(:name, :first_address_line, :postcode, :city, :amenities, :capacity, :prices, :description, amenity_ids: [], photos: [])
   end
 end
+

@@ -1,21 +1,43 @@
 <div class="container">
-  <div class="edit">
-    <h2>Edit your hopdesk space</h2>
-    <p>Update the details of your space!</p>
-    <%= simple_form_for @workspace do |f| %>
-      <%= f.input :name %>
-      <%= f.input :postcode %>
-      <%= f.input :capacity %>
-      <%= f.input :prices %>
-      <%= f.input :description %>
-      <%= f.association :amenities, collection: Amenity.all, as: :check_boxes, wrapper: :vertical_collection_inline %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true }%>
-      </br>
-      <%= f.button :submit, class: "btn btn-success" %>
-    <% end %>
+  <div class="form-container">
+    <div class="large-card-new">
+      <h2>Edit <%= @workspace.name %> </h2>
+      <p>Invite people to work in your empty spaces and earn some extra income!</p>
+      <%= simple_form_for @workspace do |f| %>
+        <%= f.input :name %>
+      <div class="form-row">
+        <div class="col">
+          <%= f.input :capacity %>
+        </div>
+        <div>
+          <%= f.input :prices %>
+        </div>
+      </div>
+        <%= f.input :first_address_line %>
+      <div class="form-row">
+        <div class="col-md-8">
+          <%= f.input :city %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :postcode %>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="row-md-6 col md-6">
+          <%= f.input :description %>
+        </div>
+      </div>
+        <%= f.association :amenities,
+                          collection: Amenity.all, as: :check_boxes,
+                          wrapper: :vertical_collection_inline,
+                          input_html: { class: "tag-selector" },
+                          item_wrapper_class: 'tag-item'%>
+        <%= f.input :photos, as: :file, input_html: { multiple: true }%>
 
-</br>
-
-  <%= link_to 'Back', workspaces_path, class: "btn btn-outline-success"%>
+        </br>
+        <%= f.button :submit, class: "btn btn-info" %>
+        <%= link_to 'Back', workspaces_path, class: "btn btn-info"%>
+      <% end %>
+    </div>
   </div>
 </div>
