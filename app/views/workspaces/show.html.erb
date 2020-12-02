@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@workspace.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @worskpace.description %>
+<% content_for :meta_image, cl_image_path(@worskpace.photo.path) %>
+
 <div class="container">
   <div class="top-container">
     <div class="top-leftside">
