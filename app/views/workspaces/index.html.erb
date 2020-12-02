@@ -9,7 +9,7 @@
               <%= f.input :search_distance, class: "form-control", placeholder: "Km radius", label: false  %>
             </div>
             <div class="form-inline">
-            <%= f.input :amenities, as: :check_boxes, collection: Amenity.pluck(:name), input_html: { multiple: true }, label: false, input_html: { class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
+            <%= f.input :amenities, as: :check_boxes, collection: Amenity.pluck(:name), input_html: { multiple: true, class: "tag-selector" }, item_wrapper_class: 'tag-item' %>
             <%= f.submit "Search", class: "btn btn-info"%>
             </div>
           <% end %>
