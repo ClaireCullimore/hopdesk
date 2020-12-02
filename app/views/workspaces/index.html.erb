@@ -4,7 +4,7 @@
     <div class="filter-form">
       <%= simple_form_for :index_search, url: workspaces_path, method: :get, html: { class: 'w-100' } do |f| %>
       <div class="filter-flex">
-        <div>
+        <div class="filter-left">
           <div class="form-inline">
             <%= f.input :search_city, class: "form-control rounded-left", placeholder: "Area or Postcode", label: false %>
             <%= f.input :search_distance, class: "form-control", placeholder: "Km radius", label: false  %>
@@ -14,7 +14,7 @@
           </div>
         </div>
         <div>
-          <%= f.submit "Search", class: "btn btn-info"%>
+          <%= f.submit "Filter", class: "btn btn-info"%>
         </div>
       </div>
     <% end %>
