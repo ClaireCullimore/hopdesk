@@ -46,7 +46,7 @@ document.addEventListener('turbolinks:load', () => {
   const submitButton = document.getElementById('book-now');
     initSweetalert('#sweet-alert-demo', {
         title: "Thank you for your booking",
-        text: "Please wait for confirmation. See account page",
+        text: "See your booking on your account page",
       }, (value) => {
         submitButton.click();
       });
