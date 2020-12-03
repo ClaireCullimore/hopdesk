@@ -178,6 +178,27 @@
   background-color: #DEF4FD;
 }
 
+.image-text {
+  position: relative;
+  text-align: center;
+}
+
+.text-group {
+  position: absolute;
+  bottom: 10px;
+  color: white;
+  left: 20px;
+}
+
+.top-name {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.bottom-location {
+  font-size: 20px;
+}
+
 .carousel-images {
   display: flex;
   justify-content: space-between;
