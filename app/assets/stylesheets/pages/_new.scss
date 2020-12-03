@@ -5,7 +5,8 @@
 }
 
 .large-card-new h2 {
-  padding-top: 10px;
+  color: #538885;
+  padding-bottom: 10px;
 }
 
 .tag-item {
@@ -33,4 +34,8 @@
 .tag-selector:checked + label {
   background-color: #538885;
   color: #fff;
+}
+
+.btn-new {
+  font-size: 15px;
 }
