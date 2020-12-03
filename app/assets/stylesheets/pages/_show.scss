@@ -1,10 +1,15 @@
 .info {
   background-color: #FFF;
   width: 647px;
-  height: 150px;
+  height: 160px;
   margin-right: 30px;
   padding: 20px;
   border-radius: 1%;
+  display:flex;
+}
+
+.info-flex {
+  width: 500px;
 }
 
 .heading h2 {
@@ -22,6 +27,19 @@
 
 .rating p {
   margin-left: 10px;
+}
+
+.price-text {
+  margin-top: 12px;
+  width: 130px;
+  margin-left: 150px;
+  height: 95px;
+  line-height: 90px;
+  border-radius: 50%;
+  background-color: white;
+  color: #538885;
+  border: 2px solid #538885;
+  text-align: center;
 }
 
 .top-container {
