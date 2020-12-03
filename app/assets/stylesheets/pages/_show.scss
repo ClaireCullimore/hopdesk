@@ -194,3 +194,7 @@ a:hover {
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
   background-color: white;
 }
+
+.tab-content > .active {
+  height: 210px;
+}
