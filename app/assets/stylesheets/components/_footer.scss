@@ -1,14 +1,16 @@
 .bas-de-page {
-  background: #dee2e6;
+  background: #fff;
   display: flex;
-  height: 40px;
-  border: 2px solid black;
+  height: 70px;
+  position: sticky;
+  top: 0;
 }
 
 .footer-links {
   position: absolute;
   left: 20px;
   padding: 7px;
+  font-size: 20px;
 }
 
 .en-tout-cas {
