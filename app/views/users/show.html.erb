@@ -14,10 +14,10 @@
 
         <p>For <%= booking.person_count %> people</p>
         <p><%= number_to_currency((booking.end_time - booking.start_time) / 3600 * booking.workspace.prices * booking.person_count, unit: :£) %> to pay at venue </p>
-       <p><%= link_to "Get in touch with the venue", 'https://wa.me/447929641799', target: "_blank" %></p>
+       <p><%= link_to "Get in touch with the venue", 'https://wa.me/447783394206', target: "_blank" %></p>
       </div>
-        <%= link_to 'See Workspace', edit_workspace_booking_path(booking.workspace, booking), class: "btn-booking btn btn-info btn-sm booking-edit-link" %>
-        <%= link_to 'Edit Booking', edit_workspace_booking_path(booking.workspace, booking), class: "btn-booking btn btn-info btn-sm booking-edit-link" %>
+        <%= link_to 'See Workspace', edit_workspace_booking_path(booking.workspace, booking), class: "btn-edit-back btn btn-info btn-sm booking-edit-link" %>
+        <%= link_to 'Edit Booking', edit_workspace_booking_path(booking.workspace, booking), class: "btn-edit-back btn btn-info btn-sm booking-edit-link" %>
         <%= link_to 'Leave a Review', new_workspace_review_path(booking.workspace), class: "btn-booking btn btn-info btn-sm booking-edit-link" %>
    </div>
   <% end %>

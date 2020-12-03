@@ -35,8 +35,13 @@
         <%= f.input :photos, as: :file, input_html: { multiple: true }%>
 
         </br>
-        <%= f.button :submit, class: "btn-edit btn btn-info" %>
-        <%= link_to 'Back', workspaces_path, class: "btn-edit btn btn-info"%>
+        <div class="top-button">
+          <%= f.button :submit, class: "btn-edit-workspace btn btn-info" %>
+        </div>
+        <div class="bottom-button">
+          <%= link_to 'Back', workspaces_path, class: "btn-edit-back btn btn-info"%>
+        </div>
+        </div>
       <% end %>
     </div>
   </div>

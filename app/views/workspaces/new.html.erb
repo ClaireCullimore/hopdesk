@@ -32,8 +32,12 @@
                           item_wrapper_class: 'tag-item'%>
         <%= f.input :photos, as: :file, input_html: { multiple: true }%>
         </br>
-        <%= f.button :submit, class: "btn-new btn btn-info" %>
-        <%= link_to 'Back', workspaces_path, class: "btn-new btn btn-info"%>
+        <div class="top-button">
+          <%= f.button :submit, class: "btn-edit-workspace btn btn-info" %>
+        </div>
+        <div class="bottom-button">
+          <%= link_to 'Back', workspaces_path, class: "btn-edit-back btn btn-info"%>
+        </div>
       <% end %>
     </div>
   </div>
