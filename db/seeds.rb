@@ -119,7 +119,7 @@ user = User.create!([{:first_name => 'Agata', :last_name => 'Klus', :email =>'ag
                           :city => 'London',
                           :user_id => User.all.sample.id },
                       { :name => "Old Peanut Factory",
-                          :postcode => 'E2 2NR',
+                          :postcode => 'E3 2NR',
                           :capacity => 5,
                           :prices => 6,
                           :description => "This old factory has so much history but currrently lies empty while plans are being considered for redevelopment. In the meantime we're renting out spaces for people to work. We have good wifi throughout the site and a small kitchen",
