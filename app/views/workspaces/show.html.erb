@@ -62,9 +62,11 @@
         </div>
         <div class="tab-content tab-pane fade tab-background" id="amenity" role="tabpanel" aria-labelledby="amenity-tab">
           <ul class="list-group">
-            <% @workspace.amenities. each do |amenity| %>
-              <li class="tab-icons"><img src=<%= amenity_icon(amenity.name) %>/></li>
+            <div class= "list-amenities">
+              <% @workspace.amenities. each do |amenity| %>
+                <li class="tab-icons"><img src=<%= amenity_icon(amenity.name) %>/></li>
             <% end %>
+            </div>
           </ul>
           </div>
           <div class=" tab-content tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
