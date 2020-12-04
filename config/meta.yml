@@ -1,7 +1,7 @@
 # config/meta.yml
 
-meta_product_name: "Hopdesk"
-meta_title: "Find somewhere to work in your local area"
-meta_description: "Relevant description"
+meta_product_name: "HOP desk"
+meta_title: "HOP desk | Find somewhere to work in your local area"
+meta_description: "Find somewhere to work in your local area"
 meta_image: "cover.png" # should exist in `app/assets/images/`
 
