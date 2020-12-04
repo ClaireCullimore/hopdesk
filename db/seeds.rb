@@ -109,7 +109,7 @@ user = User.create!([{:first_name => 'Agata', :last_name => 'Klus', :email =>'ag
                           :description => "I have a spare room which I've turned into an office and I'm renting it out during the week for anyone who wants to work there. We have great wifi and you can use our kitchen facilities to help yourself to tea and coffee!",
                           :first_address_line => '72 Effingham Road',
                           :city => 'London',
-                          :user_id => User.all.sample.id }
+                          :user_id => User.all.sample.id },
                       { :name => "Merve's Kitchen Counter",
                           :postcode => 'NW1 9SE',
                           :capacity => 5,
@@ -117,7 +117,7 @@ user = User.create!([{:first_name => 'Agata', :last_name => 'Klus', :email =>'ag
                           :description => "I'm renting out the space in my kitchen for anyone who lives nearby and wants to get out of their own home to work elsewhere. I have tea and coffee available for HOP desk customers!",
                           :first_address_line => '17 Camden Square',
                           :city => 'London',
-                          :user_id => User.all.sample.id }
+                          :user_id => User.all.sample.id },
                       { :name => "Old Peanut Factory",
                           :postcode => 'E2 2NR',
                           :capacity => 5,
@@ -125,7 +125,7 @@ user = User.create!([{:first_name => 'Agata', :last_name => 'Klus', :email =>'ag
                           :description => "This old factory has so much history but currrently lies empty while plans are being considered for redevelopment. In the meantime we're renting out spaces for people to work. We have good wifi throughout the site and a small kitchen",
                           :first_address_line => '22 Smeed Road',
                           :city => 'London',
-                          :user_id => User.all.sample.id }]
+                          :user_id => User.all.sample.id } ]
 
 path = Rails.root.join('app/static').to_s
 i = 0
