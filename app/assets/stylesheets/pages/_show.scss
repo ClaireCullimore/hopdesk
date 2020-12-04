@@ -94,6 +94,11 @@ a:hover {
   width: 100%;
 }
 
+#myTabContent {
+  height: 300px;
+  overflow: scroll;
+  width: 100%;
+}
 .tab-content p {
   color: rgba(46, 49, 49, 1);
 }
