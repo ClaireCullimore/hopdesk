@@ -106,13 +106,6 @@ a:hover {
   color: rgba(46, 49, 49, 1);
 }
 
-.list-group .icons img {
-  margin-right: 300px;
-  padding: 5px;
-  height: 50px;
-  width: 50px;
-}
-
 .second-container {
   display: flex;
   justify-content: space-between;
@@ -138,9 +131,25 @@ a:hover {
   padding-top: 10px;
 }
 
+.list-group {
+  flex-direction: row;
+  margin-top: 61px;
+
+}
+
 .list-group .list-group-item {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.tab-icons {
+  display: flex;
+
+  img {
+    height: 50px;
+    width: 50px;
+    margin-left: 40px;
+ }
 }
 
 .btn-edit {
