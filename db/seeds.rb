@@ -125,7 +125,7 @@ user = User.create!([{:first_name => 'Agata', :last_name => 'Klus', :email =>'ag
                           :description => "This old factory has so much history but currrently lies empty while plans are being considered for redevelopment. In the meantime we're renting out spaces for people to work. We have good wifi throughout the site and a small kitchen",
                           :first_address_line => '22 Smeed Road',
                           :city => 'London',
-                          :user_id => User.all.sample.id }]
+                          :user_id => User.all.sample.id } ]
 
 path = Rails.root.join('app/static').to_s
 i = 0
