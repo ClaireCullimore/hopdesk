@@ -1,4 +1,6 @@
 class WorkspacesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
   def index
     @workspaces = Workspace.all
     if params.dig(:index_search, :search_city).present? && params.dig(:index_search, :search_distance).present?
@@ -64,4 +66,3 @@ class WorkspacesController < ApplicationController
     params.require(:workspace).permit(:name, :first_address_line, :postcode, :city, :amenities, :capacity, :prices, :description, amenity_ids: [], photos: [])
   end
 end
-
